@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DEPLOYMENT & INTEGRATION : GENERAL</title>
+	<style>
+		.post-container {
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    overflow: auto
+}
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%;
+    padding: 9px;
+    background: #ccc
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tabs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs li {
+  flex: 1;
+  text-align: center;
+}
+
+.tabs li a {
+  display: block;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.tabs li.active a {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1px;
+}
+
+.tab-content table th,
+.tab-content table td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+	</style>
+</head>
+<body>
+
+	
+
+  <div class="post-container">
+    <h3 class="post-title">DEPLOYMENT & INTEGRATION : GENERAL</h3>
+    <div class="post-thumb"><img src="/static/datapreprocess.jpeg" alt="DEPLOYMENT & INTEGRATION"/></div>
+    <div class="post-content">
+        <p>How will the model be used as a component of the decision system into which it is embedded? 
+            Will the model’s predictions directly become the final decision? 
+            If there is human involvement, where and how? 
+            How much discretion do humans have over adhering to model recommendations? 
+            How are model predictions communicated to decision-makers? 
+            Each of these choices cause bias in the eventual decisions being made and on the people being affected.</p>
+    </div>
+  </div>
+    <div class="tabs">
+      <ul>
+        <li><a href="#casestudy">Case Study</a></li>
+        <li><a href="#problemidentification">Problem Identification</a></li>
+        <li><a href="#measurement">Measurement</a></li>
+        <li><a href="#mitigation">Mitigation</a></li>
+      </ul>
+      <div class="tab-content" id="casestudy">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>"The human body is a black box": supporting clinical decision-making with deep learning</td>
+                <td>Mark Sendak, Madeleine Clare Elish, Michael Gao, Joseph Futoma, William Ratliff, Marshall Nichols, Armando Bedoya, Suresh Balu, Cara O'Brien</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Case Study</td>
+                <td>FAccT</td>
+                <td>2020</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372827">"The human body is a black box": supporting clinical decision-making with deep learning</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>The impact of overbooking on a pre-trial risk assessment tool</td>
+                <td>Kristian Lum, Chesa Boudin, Megan Price</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Case Study</td>
+                <td>FAccT</td>
+                <td>2020</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372846">The impact of overbooking on a pre-trial risk assessment tool</a></td>
+                <td>None</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="problemidentification">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>Long-term Dynamics of Fairness Intervention in Connection Recommender Systems</td>
+                <td>Nil-Jana Akpinar, Cyrus DiCiccio, Preetam Nandy, Kinjal Basu</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Problem Identification</td>
+                <td>AIES</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3514094.3534173">Long-term Dynamics of Fairness Intervention in Connection Recommender Systems</a></td>
+                <td>None</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="measurement">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>FairCanary: Rapid Continuous Explainable Fairness</td>
+                <td>Avijit Ghosh, Aalok Shanbhag, Christo Wilson</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Measurement</td>
+                <td>AIES</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3514094.3534157">FairCanary: Rapid Continuous Explainable Fairness</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Fairness Guarantees under Demographic Shift</td>
+                <td>Stephen Giguere, Blossom Metevier, Bruno Castro da Silva, Yuriy Brun, Philip S. Thomas, Scott Niekum</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Measurement</td>
+                <td>ICLR</td>
+                <td>2022</td>
+                <td><a href="https://openreview.net/forum?id=wbPObLm6ueA">Fairness Guarantees under Demographic Shift</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Fairness warnings and fair-MAML: learning fairly with minimal data</td>
+                <td>Dylan Slack, Sorelle A. Friedler, Emile Givental</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Measurement</td>
+                <td>FAccT</td>
+                <td>2020</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372839">Fairness warnings and fair-MAML: learning fairly with minimal data</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Models for understanding and quantifying feedback in societal systems</td>
+                <td>Lydia Reader, Pegah Nokhiz, Cathleen Power, Neal Patwari, Suresh Venkatasubramanian, Sorelle Friedler</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Measurement</td>
+                <td>FAccT</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533230">Models for understanding and quantifying feedback in societal systems</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Towards Non Parametric Drift Detection via Dynamic Adapting Window Independence Drift Detection (DAWIDD)</td>
+                <td>Fabian Hinder, André Artelt, Barbara Hammer</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Measurement</td>
+                <td>ICML</td>
+                <td>2020</td>
+                <td><a href="https://proceedings.mlr.press/v119/hinder20a.html">Models for understanding and quantifying feedback in societal systems</a></td>
+                <td>None</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="mitigation">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bidding strategies with gender nondiscrimination constraints for online ad auctions</td>
+              <td>Milad Nasr, Michael Carl Tschantz</td>
+              <td>N/A</td>
+              <td>Deployment & Integration, General, Mitigation</td>
+              <td>FAccT</td>
+              <td>2020</td>
+              <td><a href="https://dl.acm.org/doi/10.1145/3351095.3375783">Bidding strategies with gender nondiscrimination constraints for online ad auctions</a></td>
+              <td>None</td>
+            </tr>
+            <tr>
+                <td>Fairness Violations and Mitigation under Covariate Shift</td>
+                <td>Harvineet Singh, Rina Singh, Vishwali Mhasawade, Rumi Chunara</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Mitigation</td>
+                <td>FAccT</td>
+                <td>2021</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445865">Fairness Violations and Mitigation under Covariate Shift</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>ABCinML: Anticipatory Bias Correction in Machine Learning Applications</td>
+                <td>Abdulaziz A. Almuzaini, Chidansh A. Bhatt, David M. Pennock, Vivek K. Singh</td>
+                <td>N/A</td>
+                <td>Deployment & Integration, General, Mitigation</td>
+                <td>FAccT</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533211">ABCinML: Anticipatory Bias Correction in Machine Learning Applications</a></td>
+                <td>None</td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+    
+    <!-- JavaScript for the tabs -->
+    <script>
+      const tabLinks = document.querySelectorAll('.tabs li a');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const targetId = e.target.getAttribute('href').substr(1);
+
+          tabLinks.forEach((link) => {
+            link.parentNode.classList.remove('active');
+          });
+
+          tabContents.forEach((content) => {
+            content.classList.remove('active');
+          });
+
+          e.target.parentNode.classList.add('active');
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title style="text-align:center">Pipeline Fairness</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        .dropdown-nav {
+          float: left;
+          overflow: hidden;
+        }
+        
+        .dropdown-nav .dropbtn {
+          cursor: pointer;
+          font-size: 16px;  
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+
+        form.navbar {
+            float: right;
+            /* margin-top: 10px; */
+        }
+
+        .container1 {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item {
+            width: 10em;
+        }
+
+        form.navbar .form-group {
+            /* padding: 6px; */
+            /* margin-top: 8px; */
+            /* margin-right: 8px; */
+            border: none;
+            border-radius: 3px;
+            /* width: 200px; */
+            display: inline-block;
+            /* margin-right: 10px; */
+        }
+
+        form.navbar button[type="submit"] {
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 8px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        
+        .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+          background-color: red;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #ddd;
+        }
+        
+        .show {
+          display: block;
+        }
+
+        .div-img{
+            justify-content: center;
+            align-items: center;
+            display:flex;
+            padding-top:20%;
+        }
+
+        img{
+            transition: transform .2s;
+            width:50px;
+            height:50px;
+            margin:0 auto;
+            background-color: rgb(173, 173, 237);
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        img:hover{
+            transform:scale(2.5);
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Create three equal columns that sits next to each other */
+        .column1 {
+            flex: 25%;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .column2 {
+            flex: 33.33%;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .image-container {
+        position: relative;
+        display: inline-block;
+        }
+
+        .text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .text {
+        opacity: 1;
+        }
+
+        .text p {
+        margin: 0;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .message {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        </style>
+    </head>
+<body>
+    {% if username %}
+        <!-- Display user details here
+        <p>User Details: {{ user_details }}</p> -->
+        
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Pipeline Fairness</a>
+                </div>
+                <div class="dropdown-nav">
+                    <button class="dropbtn" onclick="myFunction()">Stages
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#">Viability Assessments</a>
+                        <a href="#">Problem Formulation</a>
+                        <a href="#">Data Collection</a>
+                        <a href="#">Data Preprocessing</a>
+                        <a href="#">Statistical Modeling</a>
+                        <a href="#">Testing & Validation</a>
+                        <a href="#">Deployment & Integration</a>
+                    </div>
+                </div> 
+
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <form class="navbar">
+                    <h1 class="message">Welcome, {{ username }}!</h1>
+
+                </form> 
+                <!-- role="search" action="{{ url_for('search') }}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" name="query">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    
+                </form> -->
+                <!-- <a href="{{ url_for('register') }}">Register</a>
+
+                <a href="{{ url_for('login') }}">Login</a> -->
+                <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 style="text-align:center">Operationalizing a Pipeline-aware View of Fairness</h1>
+            <h3 style="text-align:center">This is the homepage of Pipeline Fairness</h3>
+        </div>
+        
+        <!-- <div class="div-img">
+        
+        </div> -->
+        <div class="row div-img container1">
+            <div class="column1 item image-container">
+                <img src="/static/cat.jpeg" class="thumbnail" id="va">
+                <div class="text">
+                    <p>VIABILITY ASSESSMENTS</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="viabilityassessments/cost.html">Cost/Benefit</a></li>
+                        <li><a href="viabilityassessments/general.html">General</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column1 item image-container">
+                <img src="/static/target.png" class="thumbnail" id="pf">
+                <div class="text">
+                    <p>PROBLEM FORMULATION</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="problemformulation/predictiontarget.html">PREDICTION TARGET</a></li>
+                        <li><a href="problemformulation/predictiveattributes.html">PREDICTIVE ATTRIBUTES</a></li>
+                        <li><a href="problemformulation/general.html">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column1 item image-container">
+                <img src="/static/floppy.png" class="thumbnail" id="dc">
+                <div class="text">
+                    <p>DATA COLLECTION</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="{{ url_for('datacollection_sampling', mode=mode) }}">SAMPLING</a></li>
+                        <li><a href="{{ url_for('datacollection_annotation', mode=mode) }}">ANNOTATION</a></li>
+                        <li><a href="{{ url_for('datacollection_featuremeasurement', mode=mode) }}">FEATURE MEASUREMENT</a></li>
+                        <li><a href="{{ url_for('datacollection_recordlinkage', mode=mode) }}">RECORD LINKAGE</a></li>
+                        <li><a href="{{ url_for('datacollection_general', mode=mode) }}">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column1 item image-container">
+                <img src="/static/datapreprocess.jpeg" class="thumbnail" id="dp">
+                <div class="text">
+                    <p>DATA PREPROCESSING</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="datapreprocessing/featurecreation.html">FEATURE CREATION</a></li>
+                        <li><a href="datapreprocessing/featureselection.html">FEATURE SELECTION</a></li>
+                        <li><a href="datapreprocessing/omission.html">DATA CLEANING (OMISSION)</a></li>
+                        <li><a href="datapreprocessing/general.html">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row div-img container1">
+            <div class="column2 item image-container">
+                <img src="/static/cat.jpeg" class="thumbnail" id="sm">
+                <div class="text">
+                    <p>STATISTICAL MODELING</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="statisticalmodeling/hypothesisclass.html">HYPOTHESIS CLASS</a></li>
+                        <li><a href="statisticalmodeling/optfunc.html">OPTIMIZATION FUNCTION</a></li>
+                        <li><a href="statisticalmodeling/lossfunc.html">LOSS FUNCTION</a></li>
+                        <li><a href="statisticalmodeling/regularizers.html">REGULARIZERS</a></li>
+                        <li><a href="statisticalmodeling/hyperparameters.html">HYPERPARAMETERS</a></li>
+                        <li><a href="statisticalmodeling/general.html">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column2 item image-container">
+                <img src="/static/cat.jpeg" class="thumbnail" id="tv">
+                <div class="text">
+                    <p>TESTING & VALIDATION</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="testingnvalidation/traintestsplit.html">TRAIN-TEST SPLIT</a></li>
+                        <li><a href="testingnvalidation/evaluationmetrics.html">EVALUATION METRICS</a></li>
+                        <li><a href="testingnvalidation/general.html">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column2 item image-container">
+                <img src="/static/orgnint.png" class="thumbnail" id="di">
+                <div class="text">
+                    <p>DEPLOYMENT & INTEGRATION</p>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="deploymentnintegration/humancomputerhandoff.html">HUMAN-COMPUTER HAND-OFF</a></li>
+                        <li><a href="deploymentnintegration/maintenanceoversight.html">MAINTENANCE OVERSIGHT</a></li>
+                        <li><a href="deploymentnintegration/general.html">GENERAL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>Please login to access this page.</p>
+    {% endif %}
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+              myDropdown.classList.remove('show');
+            }
+          }
+        }
+
+        $(document).ready(function() {
+            $('img.thumbnail').click(function() {
+                window.location.href = this.id + '.html';
+            });
+        });
+</script>
+</body>
+</html>

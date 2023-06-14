@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PROBLEM FORMULATION : PREDICTION TARGET</title>
+	<style>
+		.post-container {
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    overflow: auto
+}
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%;
+    padding: 9px;
+    background: #ccc
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tabs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs li {
+  flex: 1;
+  text-align: center;
+}
+
+.tabs li a {
+  display: block;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.tabs li.active a {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1px;
+}
+
+.tab-content table th,
+.tab-content table td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+	</style>
+</head>
+<body>
+
+	
+
+  <div class="post-container">
+    <h3 class="post-title">PROBLEM FORMULATION : PREDICTION TARGET</h3>
+    <div class="post-thumb"><img src="/static/datapreprocess.jpeg" alt="PROBLEM FORMULATION"/></div>
+    <div class="post-content">
+        <p>Translating the complex policy or business problem into a predictive problem. 
+        There has been a string of work enumerating fairness problems that arise from problem formulation, particularly through connecting to the social science concept of validity. 
+        Some problems of bias that may come up here include: 
+        (1) The choice of a biased proxy for a prediction target (e.g. re-arrest or re-conviction for a recidivism prediction model, since whether or not someone committed a crime cannot reliably be observed). 
+        (2) The use of non-causally related or otherwise arbitrary factors in the prediction task.</p>
+    </div>
+  </div>
+    <div class="tabs">
+      <ul>
+        <li><a href="#casestudy">Case Study</a></li>
+        <li><a href="#problemidentification">Problem Identification</a></li>
+        <li><a href="#measurement">Measurement</a></li>
+        <li><a href="#mitigation">Mitigation</a></li>
+      </ul>
+      <div class="tab-content" id="casestudy">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>Algorithmic Fairness and Vertical Equity: Income Fairness with IRS Tax Audit Models</td>
+                <td>Samir Passi, Solon Barocas</td>
+                <td>N/A</td>
+                <td>Problem Formulation, Prediction Target, Case Study</td>
+                <td>FAccT</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3287560.3287567">Algorithmic Fairness and Vertical Equity</a></td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Data augmentation for fairness-aware machine learning: Preventing algorithmic bias in law enforcement systems</td>
+                <td>Ioannis Pastaltzidis, Nikolaos Dimitriou, Katherine Quezada-Tavarez, Stergios Aidinlis, Thomas Marquenie, Agata Gurzawska, Dimitrios Tzovaras</td>
+                <td>N/A</td>
+                <td>Problem Formulation, Prediction Target, Case Study</td>
+                <td>FAccT</td>
+                <td>2022</td>
+                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3534644">Data augmentation for fairness-aware machine learning</a></td>
+                <td>None</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="problemidentification">
+        <table>
+            <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+                <tbody>
+                    
+                </tbody>
+              </thead>
+        </table>
+      </div>
+      <div class="tab-content" id="measurement">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="mitigation">
+        <table>
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Authors</th>
+              <th>Description</th>
+              <th>Tags/Comments</th>
+              <th>Conference Venue</th>
+              <th>Year</th>
+              <th>Paper link</th>
+              <th>Additional resources</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+    </div>
+  </div>
+    
+    <!-- JavaScript for the tabs -->
+    <script>
+      const tabLinks = document.querySelectorAll('.tabs li a');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const targetId = e.target.getAttribute('href').substr(1);
+
+          tabLinks.forEach((link) => {
+            link.parentNode.classList.remove('active');
+          });
+
+          tabContents.forEach((content) => {
+            content.classList.remove('active');
+          });
+
+          e.target.parentNode.classList.add('active');
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

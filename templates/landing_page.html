@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .register-button,
+        .login-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .register-button:hover,
+        .login-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Landing Page!</h1>
+    <div class="buttons-container">
+        <a href="{{ url_for('register') }}" class="register-button">Register</a>
+        <a href="{{ url_for('login') }}" class="login-button">Login</a>
+    </div>
+</body>
+</html>
