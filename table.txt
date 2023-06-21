@@ -1,0 +1,179 @@
+\begin{tabular}{|l|l|l|l|l|l}
+\hline
+
+ Stage &
+  Step &
+  Problem Identification &
+  Measurement &
+  Mitigation \\ \hline\hline
+Viability Assessments &
+  Cost/Benefit &
+   &
+   &
+   \\
+ &
+  General & \cite{raji2022fallacy}, \cite{barocas2020not}, \cite{passi2020making}
+   & \cite{wang2022against}, \cite{coston2022validity}
+   &
+   \\ \hline
+Problem Formulation &
+  Prediction Target &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{black2022algorithmic}},\colorbox{magenta}{\cite{obermeyer2019dissecting}}, \colorbox{magenta}{\cite{human_rights_watch_2020}},\\ \colorbox{magenta}{\cite{10.1145/3531146.3534644}} \end{tabular} &
+   & \cite{benami2021distributive}
+   \\ \hline
+ &
+  Predictive Attributes & \cite{grgic2018beyond}
+   &
+   &
+   \\ \hline
+ &
+  General & 
+  \begin{tabular}[c]{@{}l@{}}\colorbox{magenta}{\cite{robertsonchi21}},  \colorbox{magenta}{\cite{zhangchi22}}, \colorbox{magenta}{\cite{navarrocscw22}}, \colorbox{magenta}{\cite{nikkhahcscw22}}, \cite{passi2019problem} \\, \colorbox{magenta}{\cite{pmlr-v81-chouldechova18a}},  \cite{10.1145/3442188.3445901}, \cite{chengchi21}, \colorbox{magenta}{\cite{ilventofat20}}, \\ \cite{jacobs2021measurement}, \cite{lum2016predict}
+  \end{tabular}
+   &
+   &
+   \\ \hline
+Data Collection &
+  Sampling &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{buolamwini2018gender}}, \colorbox{magenta}{\cite{10.1145/3442188.3445916}}, \colorbox{magenta}{\cite{10.1145/3531146.3533132}}, \colorbox{magenta}{\cite{10.1145/3531146.3533159}}, \\ , \cite{cai2022adaptive} \end{tabular} & 
+  \cite{mishler2019modeling}, \cite{yik2022identifying} &
+  \begin{tabular}[c]{@{}l@{}}~\cite{sharma2020data}, \cite{van2021decaf}, \cite{10.1145/3442188.3445940}, \colorbox{yellow}{\cite{tsai2022conditional}}, \colorbox{yellow}{\cite{shekharneurips21}}, \colorbox{yellow}{\cite{roh2021fairbatch}} \end{tabular} \\ \hline
+ &
+  Annotation &
+  \begin{tabular}[c]{@{}l@{}}\colorbox{magenta}{\cite{wei2021learning}}, \cite{wang2021fair},
+  \cite{10.1145/3531146.3533216}, \cite{christoforouchi21}\end{tabular} &
+  ~\cite{liu2021can}, \cite{10.1145/3531146.3533099}, \cite{birhane2021values} &
+  \cite{10.1145/3351095.3375709} \\ \hline
+ &
+  Feature Measurement &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{wan2022fairness}}, \colorbox{magenta}{\cite{10.1145/3461702.3462561}}, \cite{frye2020asymmetric} \end{tabular}
+   &
+  \cite{10.1145/3306618.3314270} &
+   \\ \hline
+ &
+  Record Linkage &
+   &
+   &
+   \\ \hline
+ &
+  General &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{NEURIPS2021_e97a4f04}}, \colorbox{magenta}{\cite{hettiachchicscw21}},
+  \colorbox{magenta}{\cite{sambasivan2021everyone}}, \cite{10.1145/3442188.3445870}, \\ 
+  \cite{kallus2018residual}, \cite{marda2020data} \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\cite{li2022data}, \cite{ding2021retiring}, \cite{NEURIPS2021_85dca1d2}, \cite{10.1145/3461702.3462590}, \cite{NEURIPS2020_d83de59e},\\ \cite{10.1145/3351095.3373154}, \cite{10.1145/3442188.3445877}, \cite{bolukbasi2016man}, \cite{kamiran2012data} \end{tabular} &
+  ~\cite{chen2018my}, \cite{gebru2018datasheets}, \cite{boyd2021datasheets} \\ \hline
+Data Preprocessing &
+  Feature Creation &
+   &
+   &
+   \\ \hline
+ &
+  Feature Selection &
+  \cite{belitz2021automating}, \cite{yeom2018hunting}, \cite{fliptest}, \cite{leino2018featurewise}   &
+  \cite{10.1145/3461702.3462585}, \cite{NEURIPS2019_201d5469} &
+  \cite{NEURIPS2018_6cd9313e}, \cite{10.1145/3531146.3533126}, \colorbox{yellow}{\cite{heaies20}} \\ \hline
+ &
+  Data Cleaning (Omission) &
+   &
+  \cite{NIPS2017_8cb22bdd}, \cite{breck2019data} &
+  \cite{NIPS2017_9a49a25d}, \cite{10.1145/3442188.3445878}, \cite{hynes2017data}, \cite{krishnan2016activeclean}  \\ \hline
+ &
+  General &
+  \begin{tabular}[c]{@{}l@{}}\cite{10.1145/3514094.3534162}, \cite{NEURIPS2021_d800149d}, \cite{pmlr-v139-liang21a}, \cite{biswas2021fair}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\cite{10.1145/3531146.3533243}, \cite{10.1145/3531146.3534632}, \cite{pmlr-v119-choi20a}, \cite{pmlr-v162-shui22a}, \\ \cite{pmlr-v162-wang22ac}, \cite{pmlr-v162-ganev22a} \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\cite{NIPS2017_e6384711}, \cite{NEURIPS2020_af9c0e0c},  \cite{NEURIPS2021_191f8f85}, \cite{NEURIPS2021_64ff7983},\\ \cite{10.1145/3351095.3372837}, \cite{10.1145/3351095.3372843}, \cite{10.1145/3531146.3533175}, \cite{pmlr-v97-creager19a},\\ \cite{pmlr-v119-buyl20a}, \cite{pmlr-v119-celis20a}, \cite{pmlr-v139-trauble21a}, \cite{pmlr-v162-kim22b},  \end{tabular} \\ \hline
+Statistical Modeling &
+  Hypothesis Class &
+  \cite{10.1145/3442188.3445894}, \cite{10.1145/3442188.3445910},   &
+  \cite{zhu2022the}  &
+  \cite{10.1145/3514094.3534142} \\ \hline
+ &
+  Optimization Function &
+  \begin{tabular}[c]{@{}l@{}}\cite{10.1145/3351095.3372872}, \cite{suriyakumar2021chasing}, \cite{pmlr-v80-hashimoto18a}, \cite{pmlr-v162-dasgupta22b}, \\
+  \end{tabular} 
+  & \cite{d2020underspecification}
+  & \begin{tabular}[c]{@{}l@{}}\cite{pmlr-v139-xu21b} , \colorbox{yellow}{\cite{russellneurips17}}, \colorbox{yellow}{\cite{aliaies19}}, \\ \colorbox{yellow}{\cite{currenteaamo22}}, \colorbox{yellow}{\cite{russellneurips17}}, \colorbox{yellow}{\cite{roh2021fairbatch}}, \colorbox{yellow}{\cite{romanoneurips20}}, \\ \colorbox{yellow}{\cite{sharifmalvajerdineurips19}}, \colorbox{yellow}{\cite{chzhenneurips20}}, \colorbox{yellow}{\cite{choneurips20}}, \colorbox{yellow}{\cite{rohneurips21}}, \\ \colorbox{yellow}{\cite{louppeneurips17}}, \cite{li2021tilted}, \cite{xuneurips21},   \cite{xu2021robust}
+  \end{tabular}\\ \hline
+ &
+  Regularizers &
+   &
+   &
+  \cite{pmlr-v162-kancheti22a}, \cite{pmlr-v162-shah22a} \\ \hline
+ &
+  Hyperparameters &
+  \cite{10.1145/3375627.3375807}, ,  &
+   &
+  \begin{tabular}[c]{@{}l@{}}\cite{ NEURIPS2021_18de4beb}, \\ \cite{10.1145/3531146.3533094},\cite{Schmucker2020}, \cite{islam2021can},\cite{perrone2021fair} \end{tabular} \\ \hline
+ &
+  General &
+  \begin{tabular}[c]{@{}l@{}}\cite{NEURIPS2021_08425b88}, \cite{10.1145/3531146.3534641}, \cite{pmlr-v119-lohaus20a},\\ \cite{pmlr-v139-coston21a}, \cite{beutelaies19} \\ 
+  
+  % 315 \\ 
+  % 98 \\
+  \cite{akpinar2022sandbox}, \cite{bagdasaryan2019differential}, \colorbox{magenta}{\cite{10.1145/3514094.3539552}}
+  \end{tabular} 
+  &
+  \begin{tabular}[c]{@{}l@{}} \cite{navon2021learning}, \cite{10.1145/3287560.3287594}, \cite{10.1145/3351095.3372853},\\ \cite{pmlr-v139-wang21t} , \cite{ma2022tradeoff}
+  \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}, \cite{NEURIPS2021_4b26dc46}, \cite{NEURIPS2019_8d5e957f}, \cite{NEURIPS2020_55d491cf}, \\  \cite{li2021on}, \cite{balunovic2022fair}, \cite{pmlr-v81-dwork18a},\\ \cite{pmlr-v81-kamishima18a}, \cite{pmlr-v81-burke18a}, \cite{10.1145/3442188.3445887},\cite{10.1145/3531146.3533136},\\ \cite{pmlr-v97-nabi19a}, \cite{pmlr-v162-foster22a},  \\ \colorbox{yellow}{\cite{zhangaies18}}, \colorbox{yellow}{\cite{kimaies19}}, \colorbox{yellow}{\cite{sharmaaies21}}, \colorbox{yellow}{\cite{halevyeaamo21}} \\ \colorbox{yellow}{\cite{lahotineurips20}},  
+  \colorbox{yellow}{\cite{petersenneurips21}}, \colorbox{yellow}
+  {\cite{Zhao2020Conditional}}, \\
+  \colorbox{yellow}{\cite{salvador2022faircal}}, \colorbox{yellow}{\cite{wangfacct22}},
+  \colorbox{yellow}{\cite{mishlerfadefacct22}},
+  \colorbox{yellow}{\cite{wufacct22}} \\
+  \colorbox{yellow}{\cite{agarwal2018reductions}}, \colorbox{yellow}{\cite{pmlr-v80-kilbertus18a}}, \colorbox{yellow}{\cite{pmlr-v80-madras18a}}, \colorbox{yellow}{\cite{chuang2021fair}}, \\ \colorbox{yellow}{\cite{celis2019classification}}, \colorbox{yellow}{\cite{gargaies19}}, \colorbox{yellow}{\cite{pmlr-v80-komiyama18a}},
+  \colorbox{yellow}{\cite{onetoaies19}}, \\ \cite{aliaies21}, \colorbox{yellow}{\cite{grabowiczfacct22}}, \colorbox{yellow}{\cite{fisheaamo22}}, \colorbox{yellow}{\cite{chenaies20}}, \colorbox{yellow}{\cite{thomaseaamo21}}, \colorbox{yellow}{\cite{quadriantoneurips17}}, \colorbox{yellow}{\cite{kusnerneurips17}} \\ \colorbox{yellow}{\cite{doninineurips18}}, \colorbox{yellow}{\cite{heidarineurips18}}, \colorbox{yellow}{\cite{bower2021individually}},\colorbox{yellow}{\cite{vargo2021individually}}, \\ \colorbox{yellow}{\cite{yurochkin2021sensei}}, \colorbox{yellow}{\cite{xu2022controlling}}, \colorbox{yellow}{\cite{NEURIPS2019_d69768b3}}, 
+  \colorbox{yellow}{\cite{narasimhanneurips20}}, \\
+  \colorbox{yellow}{\cite{caycineurips20}}, 
+  \colorbox{yellow}{\cite{singh2021fairness}}, \colorbox{yellow}{\cite{elzaynfat19}}, \colorbox{yellow}{\cite{pmlr-v80-kearns18a}}, \\ \colorbox{yellow}{\cite{pmlr-v80-yona18a}}, \colorbox{yellow}{\cite{pmlr-v97-cotter19b}}, \colorbox{yellow}{\cite{goelaies18}}, \colorbox{yellow}{\cite{raffaies18}}, \\ \colorbox{yellow}{\cite{liuaies21}}, \colorbox{yellow}{\cite{shahguptaaies21}}, \colorbox{yellow}{\cite{liuneurips19}}, \colorbox{yellow}{\cite{chzhendenisneurips20}}, \\ \colorbox{yellow}{\cite{bechavodneurips20}},
+  \colorbox{yellow}
+  {\cite{doneurips21}},
+  \colorbox{yellow}{\cite{mishlerfacct21}}, \colorbox{yellow}{\cite{usunierfacct22}}, \\ 
+  \colorbox{yellow}{\cite{pmlr-v80-hebert-johnson18a}},
+  \colorbox{yellow}{\cite{pmlr-v97-agarwal19d}}, \cite{NEURIPS2019_373e4c5d}, \colorbox{yellow}{\cite{farnadiaies18}},  \colorbox{yellow}{\cite{harpeledneurips19}},  \colorbox{yellow}{\cite{Baharlouei2020Rényi}}, \colorbox{yellow}{\cite{Yurochkin2020Training}}, \cite{NEURIPS2021_dcf531ed},
+  \end{tabular} \\ \hline 
+Testing and Validation &
+  Train-test split &
+   &
+   &
+   \\ \hline
+ &
+  Evaluation Metrics &
+  \begin{tabular}[c]{@{}l@{}}\cite{NEURIPS2020_7ec2442a}, \cite{dullerud2022is}, \cite{10.1145/3531146.3533149},   \colorbox{yellow}{\cite{zhangmarilynfacct22}}, \cite{NEURIPS2021_ed277964},
+  \\  \end{tabular} & 
+  \begin{tabular}[c]{@{}l@{}} \colorbox{yellow}{\cite{michalskyaies19}}, \colorbox{yellow}{\cite{sharmaaies20}}, \colorbox{yellow}{\cite{dianaaies21}}, \colorbox{yellow}{\cite{kimneurips18}}, \\ \colorbox{yellow}{\cite{zhangneurips18}}, \colorbox{yellow}{\cite{kallusneurips19}}, \colorbox{yellow}{\cite{smithneurips20}}, 
+  \colorbox{yellow}{\cite{maity2021statistical}} \\ 
+  \colorbox{yellow}{\cite{jiang2022generalized}}, 
+  \colorbox{yellow}{\cite{heringtonaies2020}}, 
+  \colorbox{yellow}{\cite{cousinsneurips21}},
+  \colorbox{yellow}{\cite{costonfat20}}, \colorbox{yellow}{\cite{gargaies19}}, \colorbox{yellow}{\cite{mutluaies22}}, \cite{10.1145/3442188.3445884},   \cite{10.1145/3442188.3445927}, \cite{10.1145/3531146.3533102}, \cite{pmlr-v162-yan22c},
+  \end{tabular}
+   &
+   \begin{tabular}[c]{@{}l@{}} \cite{NEURIPS2018_415185ea}, \colorbox{yellow}{\cite{mhasawadeaies21}}, \colorbox{yellow}{\cite{zafarneurips17}}, \colorbox{yellow}{\cite{kilbertusneurips17}}, \colorbox{yellow}{\cite{canettifat19}}, \colorbox{yellow}{\cite{chzhenneurips19}}, \\ \colorbox{yellow}{\cite{balcanneurips19}}, \colorbox{yellow}{\cite{yangneurips20}}, \colorbox{yellow}{\cite{chenneurips20}}, \colorbox{yellow}{\cite{yanglorchneurips20}}, \\ \colorbox{yellow}{\cite{huangneurips21}}, \colorbox{yellow}{\cite{bendekgeyneurips21}}\end{tabular} \\ \hline
+ & 
+  General &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{pmlr-v80-olofsson18a}}, \cite{pmlr-v139-si21a} \end{tabular} &
+  \cite{10.1145/3351095.3372845}, \cite{lum2022biasing}, \cite{AIF360}, \cite{hardt2021amazon}, \cite{paullada2021data}, \cite{saleiro2018aequitas}, \colorbox{yellow}{\cite{kimfat20}}  &
+  \begin{tabular}[c]{@{}l@{}} \cite{10.1145/3306618.3314236}, \cite{10.1145/3278721.3278729},\\ \cite{cheng2021fairfil}, \cite{pmlr-v97-wang19l},  \end{tabular} \\ \hline 
+Deployment and Integration &
+  Human-Computer Handoff &
+  \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{jacobs2021machine}}, \cite{keswani2021towards}, \cite{green2019disparate}, \cite{10.1145/3531146.3533152}, \cite{10.1145/3531146.3533221}, \\ \cite{leungchi2020}, \cite{machi22}, \cite{watkinscscw20}, \cite{donahue2022human} \end{tabular} & \cite{cheng2022child}
+   & \cite{anikchi21}
+   \\ \hline
+ &
+  Maintenance &
+   & 
+   & 
+   \\
+ &
+  Oversight &
+   &
+  \cite{albarghouthi2019fairness}, &
+   \\ \hline
+ &
+  General & \begin{tabular}[c]{@{}l@{}} \colorbox{magenta}{\cite{10.1145/3351095.3372827}}, \colorbox{magenta}{\cite{10.1145/3351095.3372846}},
+  \cite{10.1145/3514094.3534173}, \cite{parkchi22}, \\ 
+  \cite{madaio2020co}, \cite{green2019principles}, \cite{green2019disparate}, \cite{cheng2022child}, \cite{de2020case} \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}} \cite{ghosh2022faircanary}, \cite{giguere2022fairness},\cite{10.1145/3351095.3372839}, \cite{10.1145/3531146.3533230},\\ \cite{pmlr-v119-hinder20a},  \cite{biswas2021ensuring} \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\cite{10.1145/3351095.3375783}, \cite{10.1145/3442188.3445865}, \cite{10.1145/3531146.3533211}, \colorbox{yellow}{\cite{camperoaies19}}, \cite{suresh2021framework}, \cite{madras2018predict}, \cite{coston2019fair} \end{tabular} \\ \hline
+\end{tabular}%
