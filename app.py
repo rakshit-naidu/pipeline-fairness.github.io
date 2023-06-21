@@ -64,7 +64,7 @@ def register():
         password = request.form['password']
 
         # print(username, email, password)
-        conn = sqlite3.connect('/Users/rakshitnaidu/Desktop/pipeline-fairness/users.db')
+        conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
         # If the email and username are available, save the user details in the database
         cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password))
@@ -109,7 +109,7 @@ def login():
         #     session.permanent = True
 
         # Connect to the users.db database
-        conn = sqlite3.connect('/Users/rakshitnaidu/Desktop/pipeline-fairness/users.db')
+        conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
         # Check if the user exists in the database
         cursor.execute("SELECT id FROM users WHERE email = ? AND password = ?", (email, password))
