@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .profile-container {
+            top: 0%;
+            margin-top: 50%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            text-align: center; /* Add text-align center */
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .register-button,
+        .login-button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 5px;
+            text-align: center;
+
+        }
+
+        .register-button:hover,
+        .login-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Welcome to the Landing Page!</h1>
+        <div class="buttons-container">
+            <a href="{{ url_for('register') }}" class="register-button">Register</a>
+            <a href="{{ url_for('login') }}" class="login-button">Login</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -215,109 +215,109 @@ def process_query(query):
 
 # VIABILITY ASSESSMENTS
 
-@app.route('/viabilityassessments/cost.html', methods=['GET', 'POST'])
+@app.route('/static/templates/viabilityassessments/cost.html', methods=['GET', 'POST'])
 def viabilityassessments_cost():
     query = "Viability Assessments-Cost/Benefit"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('viabilityassessments/cost.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/viabilityassessments/cost.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/viabilityassessments/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates//viabilityassessments/general.html', methods=['GET', 'POST'])
 def viabilityassessments_general():
     query = "Viability Assessments-General"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('viabilityassessments/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/viabilityassessments/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 # PROBLEM FORMULATION
 
-@app.route('/problemformulation/predictiontarget.html', methods=['GET', 'POST'])
+@app.route('/static/templates/problemformulation/predictiontarget.html', methods=['GET', 'POST'])
 def problemformulation_predictiontarget():
     query = "Problem Formulation-Prediction Target"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('problemformulation/predictiontarget.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/problemformulation/predictiontarget.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 @app.route('/problemformulation/predictiveattributes.html', methods=['GET', 'POST'])
 def problemformulation_predictiveattributes():
     query = "Problem Formulation-Predictive Attributes" 
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('problemformulation/predictiveattributes.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/problemformulation/predictiveattributes.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/problemformulation/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/problemformulation/general.html', methods=['GET', 'POST'])
 def problemformulation_general():
     query = "Problem Formulation-General" 
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('problemformulation/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/problemformulation/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 # DATA COLLECTION
 
-@app.route('/datacollection/sampling.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datacollection/sampling.html', methods=['GET', 'POST'])
 def datacollection_sampling():
     query = "Data Collection-Sampling"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datacollection/sampling.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/sampling.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 
-@app.route('/datacollection/annotation.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datacollection/annotation.html', methods=['GET', 'POST'])
 def datacollection_annotation():
     query = "Data Collection-Annotation"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datacollection/annotation.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/annotation.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datacollection/featuremeasurement.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datacollection/featuremeasurement.html', methods=['GET', 'POST'])
 def datacollection_featuremeasurement():
     query = "Data Collection-Feature Measurement"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datacollection/featuremeasurement.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/featuremeasurement.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datacollection/recordlinkage.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datacollection/recordlinkage.html', methods=['GET', 'POST'])
 def datacollection_recordlinkage():
     query = "Data Collection-Record Linkage"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datacollection/recordlinkage.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/recordlinkage.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datacollection/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datacollection/general.html', methods=['GET', 'POST'])
 def datacollection_general():
     query = "Data Collection-General"  # Get the query from the request
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datacollection/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 # DATA PREPROCESSING
 
 
-@app.route('/datapreprocessing/featurecreation.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datapreprocessing/featurecreation.html', methods=['GET', 'POST'])
 def datapreprocessing_featurecreation():
     query = "Data Preprocessing-Feature Creation"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datapreprocessing/featurecreation.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datapreprocessing/featurecreation.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datapreprocessing/featureselection.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datapreprocessing/featureselection.html', methods=['GET', 'POST'])
 def datapreprocessing_featureselection():
     query = "Data Preprocessing-Feature Selection"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datapreprocessing/featureselection.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datapreprocessing/featureselection.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datapreprocessing/omission.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datapreprocessing/omission.html', methods=['GET', 'POST'])
 def datapreprocessing_omission():
     query = "Data Preprocessing-Data Cleaning"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datapreprocessing/omission.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datapreprocessing/omission.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/datapreprocessing/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/datapreprocessing/general.html', methods=['GET', 'POST'])
 def datapreprocessing_general():
     query = "Data Preprocessing-General"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('datapreprocessing/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datapreprocessing/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 # STATISTICAL MODELING
@@ -329,79 +329,79 @@ def statisticalmodeling_hypothesisclass():
     return render_template('statisticalmodeling/hypothesisclass.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/statisticalmodeling/optfunc.html', methods=['GET', 'POST'])
+@app.route('/static/templates/statisticalmodeling/optfunc.html', methods=['GET', 'POST'])
 def statisticalmodeling_optfunc():
     query = "Statistical Modeling-Optimization Function"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('statisticalmodeling/optfunc.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/statisticalmodeling/optfunc.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/statisticalmodeling/hyperparameters.html', methods=['GET', 'POST'])
+@app.route('/static/templates/statisticalmodeling/hyperparameters.html', methods=['GET', 'POST'])
 def statisticalmodeling_hyperparameters():
     query = "Statistical Modeling-Hyperparameters"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('statisticalmodeling/hyperparameters.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/statisticalmodeling/hyperparameters.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/statisticalmodeling/regularizers.html', methods=['GET', 'POST'])
+@app.route('/static/templates/statisticalmodeling/regularizers.html', methods=['GET', 'POST'])
 def statisticalmodeling_regularizers():
     query = "Statistical Modeling-Regularizers"
     sub_table1, sub_table2, sub_table3 = process_query(query)
     print(sub_table2)
-    return render_template('datacollection/recordlinkage.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/datacollection/recordlinkage.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/statisticalmodeling/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/statisticalmodeling/general.html', methods=['GET', 'POST'])
 def statisticalmodeling_general():
     query = "Statistical Modeling-General"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('statisticalmodeling/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/statisticalmodeling/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 # TESTING & VALIDATION
 
-@app.route('/testingnvalidation/traintestsplit.html', methods=['GET', 'POST'])
+@app.route('/static/templates/testingnvalidation/traintestsplit.html', methods=['GET', 'POST'])
 def testingnvalidation_traintestsplit():
     query = "Testing and Validation-Train/Test Split"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('testingnvalidation/traintestsplit.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/testingnvalidation/traintestsplit.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/testingnvalidation/evaluationmetrics.html', methods=['GET', 'POST'])
+@app.route('/static/templates/testingnvalidation/evaluationmetrics.html', methods=['GET', 'POST'])
 def testingnvalidation_evaluationmetrics():
     query = "Testing and Validation-Evaluation Metrics"
     sub_table1, sub_table2, sub_table3 = process_query(query)
     print(sub_table2)
-    return render_template('testingnvalidation/evaluationmetrics.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/testingnvalidation/evaluationmetrics.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/testingnvalidation/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/testingnvalidation/general.html', methods=['GET', 'POST'])
 def testingnvalidation_general():
     query = "Testing and Validation-General"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('testingnvalidation/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/testingnvalidation/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 # DEPLOYMENT & INTEGRATION
 
-@app.route('/deploymentnintegration/humancomputerhandoff.html', methods=['GET', 'POST'])
+@app.route('/static/templates/deploymentnintegration/humancomputerhandoff.html', methods=['GET', 'POST'])
 def deploymentnintegration_humancomputerhandoff():
     query = "Deployment and Integration-Human/Computer Handoff"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('deploymentnintegration/humancomputerhandoff.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/deploymentnintegration/humancomputerhandoff.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/deploymentnintegration/maintenanceoversight.html', methods=['GET', 'POST'])
+@app.route('/static/templates/deploymentnintegration/maintenanceoversight.html', methods=['GET', 'POST'])
 def deploymentnintegration_maintenanceoversight():
     query = "Deployment and Integration-Maintenance Oversight"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('deploymentnintegration/maintenanceoversight.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/deploymentnintegration/maintenanceoversight.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
-@app.route('/deploymentnintegration/general.html', methods=['GET', 'POST'])
+@app.route('/static/templates/deploymentnintegration/general.html', methods=['GET', 'POST'])
 def deploymentnintegration_general():
     query = "Deployment and Integration-General"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    return render_template('deploymentnintegration/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
+    return render_template('/static/templates/deploymentnintegration/general.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
 

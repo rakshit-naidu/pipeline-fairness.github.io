@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    /* Some basic CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      text-align: center; /* Add text-align center */
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .profile-info {
+      margin-bottom: 20px;
+    }
+
+    .profile-info label {
+      font-weight: bold;
+    }
+
+    .profile-info span {
+      margin-left: 10px;
+    }
+
+
+    .button-logout {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button-home {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #25f41e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button-logout span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button-logout span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button-logout:hover span {
+      padding-right: 25px;
+    }
+
+    .button-logout:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+
+    .button-home span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button-home span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button-home:hover span {
+      padding-right: 25px;
+    }
+
+    .button-home:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    #blueButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>User Profile</h1>
+    <div class="profile-info">
+      <label>Name:</label>
+      <span id="name">{{ user[0] }}</span>
+    </div>
+    <div class="profile-info">
+      <label>Email:</label>
+      <span id="email">{{ user[1] }}</span>
+    </div>
+    <!-- Add more profile information as needed -->
+
+    <!-- <button class="home-button" onclick="location.href='/home/{{ mode }}/{{ user[0] }}'">Go to Home</button> -->
+    <button class="button-home" onclick="redirectToProfile('{{ user[0] }}')"><span>Go to Home</span></button>
+    <button class="button-logout" onclick="logout()"><span>Logout</span></button>
+    <button id="blueButton"><i style="font-size:24px" class="fa">&#xf040;</i>Suggest new Edits</button>
+  </div>
+
+
+  <script>
+    document.getElementById("username").textContent = user.username;
+    document.getElementById("email").textContent = user.email;
+
+    var username = user.username;
+    // Extract the domain from the email address
+    var domain = user.email.split('@')[1];
+    mode = (domain === 'edu') ? 1 : 0;
+
+    function logout() {
+      // logout functionality here
+      // Redirect the user to the login page or home page
+      var url = "{{ url_for('home') }}";
+      window.location.href = url;
+      // window.location.href = "/"; 
+    }
+
+    function redirectToProfile(username) {
+      var url = "{{ url_for('index_after_login', username=user[0]) }}";
+      window.location.href = url;
+    }
+
+    var button = document.getElementById('blueButton');
+    button.addEventListener('click', function() {
+      // Add your desired functionality here
+      window.location.href = 'https://forms.gle/yh3SmH4A3GyaSKUUA';
+      // alert('Button clicked!');
+    });
+  </script>
+</body>
+</html>
