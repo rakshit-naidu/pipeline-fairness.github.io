@@ -1,419 +1,283 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>DATA PREPROCESSING : FEATURE CREATION</title>
-	<style>
-		.post-container {
-    margin: 20px 20px 0 0;  
-    border: 5px solid #333;
-    overflow: auto
-}
-.post-thumb {
-    float: left
-}
-.post-thumb img {
-    display: block;
-    width: 200px;
-    height: auto;
-}
-.post-content {
-    margin-left: 210px
-}
-.post-title {
-    font-weight: bold;
-    font-size: 200%;
-    padding: 9px;
-    background: #ccc
-}
+  <head>
+    <title>DATA PREPROCESSING : GENERAL</title>
+    <style>
+      /* Add custom styles for the table if needed */
+      .post-container {
+            margin: 20px 20px 0 0;  
+            border: 5px solid #333;
+            overflow: auto
+        }
+        .post-thumb {
+            float: left
+        }
+        .post-thumb img {
+            display: block;
+            width: 200px;
+            height: auto;
+        }
+        .post-content {
+            margin-left: 210px
+        }
+        .post-title {
+            font-weight: bold;
+            font-size: 200%;
+            padding: 9px;
+            background: #ccc
+        }
 
-.tabs {
-  margin-top: 20px;
-}
+        .tabs {
+        margin-top: 20px;
+        }
 
-.tabs ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
+        .tabs ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        }
 
-.tabs li {
-  flex: 1;
-  text-align: center;
-}
+        .tabs li {
+        flex: 1;
+        text-align: center;
+        }
 
-.tabs li a {
-  display: block;
-  padding: 10px;
-  background-color: #f2f2f2;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
+        .tabs li a {
+        display: block;
+        padding: 10px;
+        background-color: #f2f2f2;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        }
 
-.tabs li.active a {
-  background-color: #fff;
-  border-color: #ccc;
-}
+        .tabs li.active a {
+        background-color: #fff;
+        border-color: #ccc;
+        }
 
-.tab-content {
-  display: none;
-}
+        .tab-content {
+        display: none;
+        }
 
-.tab-content.active {
-  display: block;
-}
+        .tab-content.active {
+        display: block;
+        }
 
-.tab-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1px;
-}
+        .tab-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1px;
+        }
 
-.tab-content table th,
-.tab-content table td {
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-	</style>
-</head>
-<body>
-
-	
-
-  <div class="post-container">
-    <h3 class="post-title">DATA PREPROCESSING : FEATURE CREATION</h3>
-    <div class="post-thumb"><img src="/static/datapreprocess.jpeg" alt="DATA PREPROCESSING"/></div>
-    <div class="post-content">
-        <p>Steps to make data usable by the ML model–e.g., dropping or imputing missing values, transforming 
-            (standardizing or normalizing data), as well as feature engineering, i.e. deciding how to construct 
-            features from available information for use in the model, and which of the constructed features to use for prediction. 
-            Again, there are myriad ways for biases to enter through feature engineering decisions such as building features from data 
-            that is likely to be of higher quality for some groups, using data transformations with differential error rates across groups, 
-            imputing missing data in ways that have differential accuracy across groups, selecting features which are differentially informative 
-            across demographic populations, or choosing normatively objectionable features to use for a prediction task, such as whether or not the family 
-            members of a defendant have criminal records to determine whether they are recommended for release or to be jailed.</p>
+        .tab-content table th,
+        .tab-content table td {
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="post-container">
+        <h3 class="post-title">DATA PREPROCESSING : GENERAL</h3>
+        <div class="post-thumb"><img src="/static/data_preprocessing.png" alt="DATA PREPROCESSING"/></div>
+        <div class="post-content">
+            <p>Determining what type of model will be used and how it will be trained. 
+              Decisions here include: choosing the model type, learning rule and loss function, regularizers, and the values of hyper-parameters determining normalization and training procedures. 
+              For example, choosing between linear, forest- based, or deep models; choosing the architecture of deep models; what constraints to add to the loss function, how to optimize that loss function (e.g. SGD or momentum), etc. 
+              Each decision here can lead to downstream bias such as choose a learning rule which is biased toward a certain subset of individuals in the data or over- or under-emphasizes outliers or minority populations.</p>
+        </div>
+      </div>
+        <div class="tabs">
+          <ul>
+            <!-- <li><a href="#casestudy">Case Study</a></li> -->
+            <li><a href="#problemidentification">Problem Identification</a></li>
+            <li><a href="#measurement">Measurement</a></li>
+            <li><a href="#mitigation">Mitigation</a></li>
+          </ul>
+          <div class="tab-content" id="problemidentification">
+            <table id="sub-table1">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table1 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="measurement">
+            <table id="sub-table2">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table2 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="mitigation">
+            <table id="sub-table3">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table3 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-    <div class="tabs">
-      <ul>
-        <li><a href="#casestudy">Case Study</a></li>
-        <li><a href="#problemidentification">Problem Identification</a></li>
-        <li><a href="#measurement">Measurement</a></li>
-        <li><a href="#mitigation">Mitigation</a></li>
-      </ul>
-      <div class="tab-content" id="casestudy">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="problemidentification">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gender Bias in Word Embeddings: A Comprehensive Analysis of Frequency, Syntax, and Semantics</td>
-              <td>Aylin Caliskan, Pimparkar Parth Ajay, Tessa Charlesworth, Robert Wolfe, Mahzarin R. Banaji</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Problem Identification</td>
-              <td>AIES</td>
-              <td>2022</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3514094.3534162">Gender Bias in Word Embeddings</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Does enforcing fairness mitigate biases caused by subpopulation shift?</td>
-              <td>Subha Maity, Debarghya Mukherjee, Mikhail Yurochkin, Yuekai Sun</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Problem Identification</td>
-              <td>NeurIPS</td>
-              <td>2021</td>
-              <td><a href="https://proceedings.neurips.cc//paper/2021/hash/d800149d2f947ad4d64f34668f8b20f6-Abstract.html">Does enforcing fairness mitigate biases caused by subpopulation shift?</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Towards Understanding and Mitigating Social Biases in Language Models</td>
-              <td>Paul Pu Liang, Chiyu Wu, Louis-Philippe Morency, Ruslan Salakhutdinov</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Problem Identification</td>
-              <td>ICML</td>
-              <td>2021</td>
-              <td><a href="https://proceedings.mlr.press/v139/liang21a.html">Towards Understanding and Mitigating Social Biases in Language Models</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Robin Hood and Matthew Effects: Differential Privacy Has Disparate Impact on Synthetic Data</td>
-              <td>Georgi Ganev, Bristena Oprisanu, Emiliano De Cristofaro</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Problem Identification</td>
-              <td>ICML</td>
-              <td>2022</td>
-              <td><a href="https://proceedings.mlr.press/v162/ganev22a.html">Robin Hood and Matthew Effects</a></td>
-              <td>None</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="measurement">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Uncertainty and the Social Planner's Problem: Why Sample Complexity Matters</td>
-              <td>Cyrus Cousins</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Measurement</td>
-              <td>FAccT</td>
-              <td>2022</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533243">Uncertainty and the Social Planner's Problem</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Promoting Fairness in Learned Models by Learning to Active Learn under Parity Constraints</td>
-              <td>Amr Sharaf, Hal Daume III, Renkun Ni</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Measurement</td>
-              <td>FAccT</td>
-              <td>2022</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3531146.3534632">Promoting Fairness in Learned Models</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Fair Generative Modeling via Weak Supervision</td>
-              <td>Kristy Choi, Aditya Grover, Trisha Singh, Rui Shu, Stefano Ermon</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Measurement</td>
-              <td>ICML</td>
-              <td>2020</td>
-              <td><a href="https://proceedings.mlr.press/v119/choi20a.html">Fair Generative Modeling via Weak Supervision</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Fair Representation Learning through Implicit Path Alignment</td>
-              <td>Changjian Shui, Qi Chen, Jiaqi Li, Boyu Wang, Christian Gagné</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Measurement</td>
-              <td>ICML</td>
-              <td>2022</td>
-              <td><a href="https://proceedings.mlr.press/v162/shui22a.html">Fair Representation Learning through Implicit Path Alignment</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Understanding Instance Level Impact of Fairness Constraints</td>
-              <td>Jialu Wang, Xin Eric Wang, Yang Liu</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Measurement</td>
-              <td>ICML</td>
-              <td>2022</td>
-              <td><a href="https://proceedings.mlr.press/v162/wang22ac.html">Understanding Instance Level Impact of Fairness Constraints</a></td>
-              <td>None</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="mitigation">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Beyond Parity: Fairness Objectives for Collaborative Filtering</td>
-              <td>Sirui Yao, Bert Huang</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>NeurIPS</td>
-              <td>2017</td>
-              <td><a href="https://proceedings.neurips.cc//paper/2017/hash/e6384711491713d29bc63fc5eeb5ba4f-Abstract.html">Beyond Parity</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Exploiting MMD and Sinkhorn Divergences for Fair and Transferable Representation Learning</td>
-              <td>Luca Oneto, Michele Donini, Giulia Luise, Carlo Ciliberto, Andreas Maurer, Massimiliano Pontil</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>NeurIPS</td>
-              <td>2020</td>
-              <td><a href="https://proceedings.mlr.press/v162/wang22ac.html">Exploiting MMD and Sinkhorn Divergences</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>AutoBalance: Optimized Loss Functions for Imbalanced Data</td>
-              <td>Mingchen Li, Xuechen Zhang, Christos Thrampoulidis, Jiasi Chen, Samet Oymak</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>NeurIPS</td>
-              <td>2021</td>
-              <td><a href="https://proceedings.neurips.cc//paper/2021/hash/191f8f858acda435ae0daf994e2a72c2-Abstract.html">AutoBalance</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Fairness via Representation Neutralization</td>
-              <td>Mengnan Du, Subhabrata Mukherjee, Guanchu Wang, Ruixiang Tang, Ahmed Awadallah, Xia Hu</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>NeurIPS</td>
-              <td>2021</td>
-              <td><a href="https://proceedings.neurips.cc//paper/2021/hash/64ff7983a47d331b13a81156e2f4d29d-Abstract.html">Fairness via Representation Neutralization</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Reducing sentiment polarity for demographic attributes in word embeddings using adversarial learning</td>
-              <td>Chris Sweeney, Maryam Najafian</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>FAccT</td>
-              <td>2020</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372837">Reducing sentiment polarity</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Bias in word embeddings</td>
-              <td>Orestis Papakyriakopoulos, Simon Hegelich, Juan Carlos Medina Serrano, Fabienne Marco</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>FAccT</td>
-              <td>2020</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372843">Bias in word embeddings</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Smallset Timelines: A Visual Representation of Data Preprocessing Decisions</td>
-              <td>Lydia R. Lucchesi, Petra M. Kuhnert, Jenny L. Davis, Lexing Xie</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>FAccT</td>
-              <td>2022</td>
-              <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533175">Smallset Timelines</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Flexibly Fair Representation Learning by Disentanglement</td>
-              <td>Elliot Creager, David Madras, Joern-Henrik Jacobsen, Marissa Weis, Kevin Swersky, Toniann Pitassi, Richard Zemel</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>ICML</td>
-              <td>2019</td>
-              <td><a href="https://proceedings.mlr.press/v97/creager19a.html">Flexibly Fair Representation Learning by Disentanglement</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>DeBayes: a Bayesian Method for Debiasing Network Embeddings</td>
-              <td>Maarten Buyl, Tijl De Bie</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>ICML</td>
-              <td>2020</td>
-              <td><a href="https://proceedings.mlr.press/v119/buyl20a.html">DeBayes</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Data preprocessing to mitigate bias: A maximum entropy based approach</td>
-              <td>L. Elisa Celis, Vijay Keswani, Nisheeth Vishnoi</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>ICML</td>
-              <td>2020</td>
-              <td><a href="https://proceedings.mlr.press/v119/celis20a.html">Data preprocessing to mitigate bias</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>On Disentangled Representations Learned from Correlated Data</td>
-              <td>Frederik Träuble, Elliot Creager,  Niki Kilbertus, Francesco Locatello, Andrea Dittadi, Anirudh Goyal, Bernhard Schölkopf, Stefan Bauer</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>ICML</td>
-              <td>2021</td>
-              <td><a href="https://proceedings.mlr.press/v139/trauble21a.html">On Disentangled Representations Learned from Correlated Data</a></td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>Learning fair representation with a parametric integral probability metric</td>
-              <td>Dongha Kim, Kunwoong Kim, Insung Kong, Ilsang Ohn, Yongdai Kim</td>
-              <td>N/A</td>
-              <td>Data Preprocessing, General, Mitigation</td>
-              <td>ICML</td>
-              <td>2022</td>
-              <td><a href="https://proceedings.mlr.press/v162/kim22b.html">Learning fair representation with a parametric integral probability metric</a></td>
-              <td>None</td>
-            </tr>
-            
-            
-          </tbody>
-        </table>
-    </div>
-  </div>
-    
-    <!-- JavaScript for the tabs -->
     <script>
-      const tabLinks = document.querySelectorAll('.tabs li a');
-      const tabContents = document.querySelectorAll('.tab-content');
+        
+        const tabLinks = document.querySelectorAll('.tabs li a');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-      tabLinks.forEach((link) => {
+        tabLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
+            e.preventDefault();
 
-          const targetId = e.target.getAttribute('href').substr(1);
+            const targetId = e.target.getAttribute('href').substr(1);
+            console.log(targetId)
 
-          tabLinks.forEach((link) => {
+            tabLinks.forEach((link) => {
             link.parentNode.classList.remove('active');
-          });
+            });
 
-          tabContents.forEach((content) => {
+            tabContents.forEach((content) => {
             content.classList.remove('active');
-          });
+            });
 
-          e.target.parentNode.classList.add('active');
-          document.getElementById(targetId).classList.add('active');
+            e.target.parentNode.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
         });
-      });
+        });
+        
+        
+        //   Retrieve the sub-table data from Flask and render the table
+        var subTableData1 = JSON.parse('{{ sub_table1 | tojson }}');
+        var subTable1 = document.getElementById('sub-table1');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData1.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable1.appendChild(row);
+        });
+
+        console.log(subTableData1)
+
+
+        var subTableData2 = JSON.parse('{{ sub_table2 | tojson }}');
+        var subTable2 = document.getElementById('sub-table2');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData2.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable2.appendChild(row);
+        });
+
+
+        var subTableData3 = JSON.parse('{{ sub_table3 | tojson }}');
+        var subTable3 = document.getElementById('sub-table3');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData3.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            row.appendChild(cell);
+        });
+
+
+        
+        subTable3.appendChild(row);
+        });
+
+
+        
     </script>
   </body>
 </html>

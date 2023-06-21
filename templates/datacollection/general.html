@@ -1,313 +1,283 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>DATA COLLECTION : GENERAL</title>
-	<style>
-		.post-container {
-    margin: 20px 20px 0 0;  
-    border: 5px solid #333;
-    overflow: auto
-}
-.post-thumb {
-    float: left
-}
-.post-thumb img {
-    display: block;
-    width: 200px;
-    height: auto;
-}
-.post-content {
-    margin-left: 210px
-}
-.post-title {
-    font-weight: bold;
-    font-size: 200%;
-    padding: 9px;
-    background: #ccc
-}
+  <head>
+    <title>DATA COLLECTION : GENERAL</title>
+    <style>
+      /* Add custom styles for the table if needed */
+      .post-container {
+            margin: 20px 20px 0 0;  
+            border: 5px solid #333;
+            overflow: auto
+        }
+        .post-thumb {
+            float: left
+        }
+        .post-thumb img {
+            display: block;
+            width: 200px;
+            height: auto;
+        }
+        .post-content {
+            margin-left: 210px
+        }
+        .post-title {
+            font-weight: bold;
+            font-size: 200%;
+            padding: 9px;
+            background: #ccc
+        }
 
-.tabs {
-  margin-top: 20px;
-}
+        .tabs {
+        margin-top: 20px;
+        }
 
-.tabs ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
+        .tabs ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        }
 
-.tabs li {
-  flex: 1;
-  text-align: center;
-}
+        .tabs li {
+        flex: 1;
+        text-align: center;
+        }
 
-.tabs li a {
-  display: block;
-  padding: 10px;
-  background-color: #f2f2f2;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
+        .tabs li a {
+        display: block;
+        padding: 10px;
+        background-color: #f2f2f2;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        }
 
-.tabs li.active a {
-  background-color: #fff;
-  border-color: #ccc;
-}
+        .tabs li.active a {
+        background-color: #fff;
+        border-color: #ccc;
+        }
 
-.tab-content {
-  display: none;
-}
+        .tab-content {
+        display: none;
+        }
 
-.tab-content.active {
-  display: block;
-}
+        .tab-content.active {
+        display: block;
+        }
 
-.tab-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1px;
-}
+        .tab-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1px;
+        }
 
-.tab-content table th,
-.tab-content table td {
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-	</style>
-</head>
-<body>
-
-	
-
-  <div class="post-container">
-    <h3 class="post-title">DATA COLLECTION : GENERAL</h3>
-    <div class="post-thumb"><img src="/static/floppy.png" alt="DATA COLLECTION"/></div>
-    <div class="post-content">
-        <p>Collecting or compiling data to train the model. This involves making choices—or implicitly
-          accepting previously made choices—about how to sample, label, link, and omit data. Some questions include—
-          What population will we sample to build our model? How will we collect this data? How will we measure our
-          prediction task? How will we define a positive label based on the prediction task? Who will label our data? How
-          will we link across data sources?</p>
+        .tab-content table th,
+        .tab-content table td {
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="post-container">
+        <h3 class="post-title">DATA COLLECTION : GENERAL</h3>
+        <div class="post-thumb"><img src="/static/data_collection.png" alt="DATA COLLECTION"/></div>
+        <div class="post-content">
+            <p>Determining what type of model will be used and how it will be trained. 
+              Decisions here include: choosing the model type, learning rule and loss function, regularizers, and the values of hyper-parameters determining normalization and training procedures. 
+              For example, choosing between linear, forest- based, or deep models; choosing the architecture of deep models; what constraints to add to the loss function, how to optimize that loss function (e.g. SGD or momentum), etc. 
+              Each decision here can lead to downstream bias such as choose a learning rule which is biased toward a certain subset of individuals in the data or over- or under-emphasizes outliers or minority populations.</p>
+        </div>
+      </div>
+        <div class="tabs">
+          <ul>
+            <!-- <li><a href="#casestudy">Case Study</a></li> -->
+            <li><a href="#problemidentification">Problem Identification</a></li>
+            <li><a href="#measurement">Measurement</a></li>
+            <li><a href="#mitigation">Mitigation</a></li>
+          </ul>
+          <div class="tab-content" id="problemidentification">
+            <table id="sub-table1">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table1 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="measurement">
+            <table id="sub-table2">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table2 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="mitigation">
+            <table id="sub-table3">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table3 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-    <div class="tabs">
-      <ul>
-        <li><a href="#casestudy">Case Study</a></li>
-        <li><a href="#problemidentification">Problem Identification</a></li>
-        <li><a href="#measurement">Measurement</a></li>
-        <li><a href="#mitigation">Mitigation</a></li>
-      </ul>
-      <div class="tab-content" id="casestudy">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Dynamic COVID risk assessment accounting for community virus exposure from a spatial-temporal transmission model</td>
-                <td>Yuan Chen, Wenbo Fei, Qinxia Wang, Donglin Zeng, Yuanjia Wang</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/e97a4f04ef1b914f6a1698caa364f693-Abstract.html">Dynamic COVID risk assessment accounting</a></td>
-                <td>None</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="problemidentification">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Designing an Online Infrastructure for Collecting AI Data From People With Disabilities</td>
-                <td>Joon Sung Park, Danielle Bragg, Ece Kamar, Meredith Ringel Morris</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Problem Identification</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445870">Designing an Online Infrastructure for Collecting AI Data From People With Disabilities</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Residual Unfairness in Fair Machine Learning from Prejudiced Data</td>
-                <td>Nathan Kallus, Angela Zhou</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Problem Identification</td>
-                <td>ICML</td>
-                <td>2018</td>
-                <td><a href="https://proceedings.mlr.press/v80/kallus18a.html">Residual Unfairness in Fair Machine Learning from Prejudiced Data</a></td>
-                <td>None</td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="measurement">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Data-Centric Factors in Algorithmic Fairness</td>
-                <td>Nianyun Li, Naman Goel, Elliott Ash</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>AIES</td>
-                <td>2022</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3514094.3534147">Data-Centric Factors in Algorithmic Fairness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Retiring Adult: New Datasets for Fair Machine Learning</td>
-                <td>Frances Ding, Moritz Hardt, John Miller, Ludwig Schmidt</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/32e54441e6382a7fbacbbbaf3c450059-Abstract.html">Retiring Adult</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Assessing Fairness in the Presence of Missing Data</td>
-                <td>Yiliang Zhang, Qi Long</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/85dca1d270f7f9aef00c9d372f114482-Abstract.html">Assessing Fairness in the Presence of Missing Data</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Understanding the Representation and Representativeness of Age in AI Data Sets</td>
-                <td>Joon Sung Park, Michael S. Bernstein, Robin N. Brewer, Ece Kamar, Meredith Ringel Morris</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>AIES</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3461702.3462590">Understanding the Representation and Representativeness of Age in AI Data Sets</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Can I Trust My Fairness Metric? Assessing Fairness with Unlabeled Data and Bayesian Inference</td>
-                <td>Disi Ji, Padhraic Smyth, Mark Steyvers</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>NeurIPS</td>
-                <td>2020</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2020/hash/d83de59e10227072a9c034ce10029c39-Abstract.html">Can I Trust My Fairness Metric?</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Assessing algorithmic fairness with unobserved protected class using data combination</td>
-                <td>Nathan Kallus, Xiaojie Mao, Angela Zhou</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2020</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3351095.3373154">Assessing algorithmic fairness with unobserved protected class using data combination</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>The effect of differential victim crime reporting on predictive policing systems</td>
-                <td>Nil-Jana Akpinar, Maria De-Arteaga, Alexandra Chouldechova</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445877">The effect of differential victim crime reporting on predictive policing systems</a></td>
-                <td>None</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="mitigation">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Why Is My Classifier Discriminatory?</td>
-                <td>Irene Chen, Fredrik D. Johansson, David Sontag</td>
-                <td>N/A</td>
-                <td>Data Collection, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2018</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2018/hash/1f1baa5b8edac74eb4eaa329f14a0361-Abstract.html">Why Is My Classifier Discriminatory?</a></td>
-                <td>None</td>
-              </tr>
-          </tbody>
-        </table>
-    </div>
-  </div>
-    
     <script>
-      const tabLinks = document.querySelectorAll('.tabs li a');
-      const tabContents = document.querySelectorAll('.tab-content');
+        
+        const tabLinks = document.querySelectorAll('.tabs li a');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-      tabLinks.forEach((link) => {
+        tabLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
+            e.preventDefault();
 
-          const targetId = e.target.getAttribute('href').substr(1);
+            const targetId = e.target.getAttribute('href').substr(1);
+            console.log(targetId)
 
-          tabLinks.forEach((link) => {
+            tabLinks.forEach((link) => {
             link.parentNode.classList.remove('active');
-          });
+            });
 
-          tabContents.forEach((content) => {
+            tabContents.forEach((content) => {
             content.classList.remove('active');
-          });
+            });
 
-          e.target.parentNode.classList.add('active');
-          document.getElementById(targetId).classList.add('active');
+            e.target.parentNode.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
         });
-      });
+        });
+        
+        
+        //   Retrieve the sub-table data from Flask and render the table
+        var subTableData1 = JSON.parse('{{ sub_table1 | tojson }}');
+        var subTable1 = document.getElementById('sub-table1');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData1.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable1.appendChild(row);
+        });
+
+        console.log(subTableData1)
+
+
+        var subTableData2 = JSON.parse('{{ sub_table2 | tojson }}');
+        var subTable2 = document.getElementById('sub-table2');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData2.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable2.appendChild(row);
+        });
+
+
+        var subTableData3 = JSON.parse('{{ sub_table3 | tojson }}');
+        var subTable3 = document.getElementById('sub-table3');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData3.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            row.appendChild(cell);
+        });
+
+
+        
+        subTable3.appendChild(row);
+        });
+
+
+        
     </script>
   </body>
 </html>

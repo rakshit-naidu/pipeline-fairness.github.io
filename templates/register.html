@@ -1,155 +1,55 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
-    <h1>Register</h1>
-    {% if error %}
-    <p class="error">{{ error }}</p>
-    {% endif %}
-    <form method="post">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <input type="submit" value="Login">
-    </form>
-  </body>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
-<head>
-  <meta charset="UTF-8">
-  <title>User Registration</title>
-</head>
-<script>
-  function redirectToHomePage() {
-    window.location.href = "/";
-  }
-</script>
-<body>
-  <h1 class="display-4">User Registration</h1>
-  <form method="POST" id="registration-form">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required required class="form-control"><br>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required required class="form-control"><br>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required required class="form-control"><br>
-    
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password" required required class="form-control"><br>
-    
-    <button type="submit" onclick="redirectToHomePage()" class="btn btn-primary">Register</button>
-  </form>
-
-  <script>
-    const form = document.querySelector('#registration-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const username = form.querySelector('#username').value;
-      const email = form.querySelector('#email').value;
-      
-      // const response = await fetch(`/check_user_exists?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}`);
-      // const data = await response.json();
-      // console.log(data);
-      
-      // if (data.username_taken) {
-      //   alert('Username is already taken. Please choose a different one.');
-      //   return;
-      // }
-      
-      // if (data.email_taken) {
-      //   alert('Email is already taken. Please use a different one.');
-      //   return;
-      // }
-      
-      // If username and email are available, submit the form
-      form.submit();
-    });
-  </script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registration</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/style.css">
 </head>
-<script>
-  function redirectToHomePage() {
-    window.location.href = "/";
-  }
-</script>
 <body>
   <div class="container">
-    <h1 class="display-4">User Registration</h1>
-    <form method="POST" id="registration-form" class="mt-4">
-      <div class="row mb-3">
-        <label for="username" class="col-sm-3 col-form-label">Username:</label>
-        <div class="col-sm-9">
-          <input type="text" id="username" name="username" required class="form-control">
-        </div>
+    <h1>User Registration</h1>
+    <div class="signup-box">
+      <div class="left-box">
+        <form method="POST" id="registration-form">
+          <input type="username" id="username" name="username" placeholder="Username" required class="input-box">
+          <input type="email" id="email" name="email" placeholder="Email" required class="input-box">
+          <input type="password" id="password" name="password" placeholder="Password" required class="input-box">
+          <button type="button" id="submitButton" onclick="redirectToHomePage()" >REGISTER <span>&#x27f6;</span></button>
+        </form>
       </div>
-      <div class="row mb-3">
-        <label for="email" class="col-sm-3 col-form-label">Email:</label>
-        <div class="col-sm-9">
-          <input type="email" id="email" name="email" required class="form-control">
-        </div>
-      </div>
-      <div class="row mb-3">
-        <label for="password" class="col-sm-3 col-form-label">Password:</label>
-        <div class="col-sm-9">
-          <input type="password" id="password" name="password" required class="form-control">
-        </div>
-      </div>
-      <div class="row mb-3">
-        <label for="confirm-password" class="col-sm-3 col-form-label">Confirm Password:</label>
-        <div class="col-sm-9">
-          <input type="password" id="confirm-password" name="confirm-password" required class="form-control">
-        </div>
-      </div>
-      <button type="submit" onclick="redirectToHomePage()" class="btn btn-primary">Register</button>
-    </form>
+      <!-- <div class="right-box"></div> -->
+    </div>
+
+    <p class="login-msg">Already have an account? <a href="login.html">Login</a></p> 
+    
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
   <script>
-    const form = document.querySelector('#registration-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    
+    const form = document.getElementById('registration-form');
+    const submitButton = document.getElementById('submitButton');
+    
+    submitButton.addEventListener('click', function(event) {
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
       
-      const username = form.querySelector('#username').value;
-      const email = form.querySelector('#email').value;
+      // console.log(username, email)
+      if (!username || !email || !password) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Display an error message or perform any desired action
+        alert('All fields are required!');
       
-      // const response = await fetch(`/check_user_exists?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}`);
-      // const data = await response.json();
-      // console.log(data);
-      
-      // if (data.username_taken) {
-      //   alert('Username is already taken. Please choose a different one.');
-      //   return;
-      // }
-      
-      // if (data.email_taken) {
-      //   alert('Email is already taken. Please use a different one.');
-      //   return;
-      // }
-      
-      // If username and email are available, submit the form
-      form.submit();
+      }
+      else{
+        form.submit();
+      }
     });
+
+    function redirectToHomePage() {
+        window.location.href = "/";
+    }
   </script>
 </body>
 </html>

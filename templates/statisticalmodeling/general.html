@@ -1,488 +1,283 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>STATISTICAL MODELING : GENERAL</title>
-	<style>
-		.post-container {
-    margin: 20px 20px 0 0;  
-    border: 5px solid #333;
-    overflow: auto
-}
-.post-thumb {
-    float: left
-}
-.post-thumb img {
-    display: block;
-    width: 200px;
-    height: auto;
-}
-.post-content {
-    margin-left: 210px
-}
-.post-title {
-    font-weight: bold;
-    font-size: 200%;
-    padding: 9px;
-    background: #ccc
-}
+  <head>
+    <title>STATISCAL MODELING : GENERAL</title>
+    <style>
+      /* Add custom styles for the table if needed */
+      .post-container {
+            margin: 20px 20px 0 0;  
+            border: 5px solid #333;
+            overflow: auto
+        }
+        .post-thumb {
+            float: left
+        }
+        .post-thumb img {
+            display: block;
+            width: 200px;
+            height: auto;
+        }
+        .post-content {
+            margin-left: 210px
+        }
+        .post-title {
+            font-weight: bold;
+            font-size: 200%;
+            padding: 9px;
+            background: #ccc
+        }
 
-.tabs {
-  margin-top: 20px;
-}
+        .tabs {
+        margin-top: 20px;
+        }
 
-.tabs ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
+        .tabs ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        }
 
-.tabs li {
-  flex: 1;
-  text-align: center;
-}
+        .tabs li {
+        flex: 1;
+        text-align: center;
+        }
 
-.tabs li a {
-  display: block;
-  padding: 10px;
-  background-color: #f2f2f2;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
+        .tabs li a {
+        display: block;
+        padding: 10px;
+        background-color: #f2f2f2;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        }
 
-.tabs li.active a {
-  background-color: #fff;
-  border-color: #ccc;
-}
+        .tabs li.active a {
+        background-color: #fff;
+        border-color: #ccc;
+        }
 
-.tab-content {
-  display: none;
-}
+        .tab-content {
+        display: none;
+        }
 
-.tab-content.active {
-  display: block;
-}
+        .tab-content.active {
+        display: block;
+        }
 
-.tab-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1px;
-}
+        .tab-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1px;
+        }
 
-.tab-content table th,
-.tab-content table td {
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-	</style>
-</head>
-<body>
-
-	
-
-  <div class="post-container">
-    <h3 class="post-title">STATISTICAL MODELING : GENERAL</h3>
-    <div class="post-thumb"><img src="/static/datapreprocess.jpeg" alt="STATISTICAL MODELING"/></div>
-    <div class="post-content">
-        <p>Determining what type of model will be used and how it will be trained. 
-            Decisions here include: choosing the model type, learning rule and loss function, regularizers, and the values of hyper-parameters determining normalization and training procedures. 
-            For example, choosing between linear, forest- based, or deep models; choosing the architecture of deep models; what constraints to add to the loss function, how to optimize that loss function (e.g. SGD or momentum), etc. 
-            Each decision here can lead to downstream bias such as choose a learning rule which is biased toward a certain subset of individuals in the data or over- or under-emphasizes outliers or minority populations.</p>
+        .tab-content table th,
+        .tab-content table td {
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="post-container">
+        <h3 class="post-title">STATISTICAL MODELING : GENERAL</h3>
+        <div class="post-thumb"><img src="/static/statistical_modeling.png" alt="STATISTICAL MODELING"/></div>
+        <div class="post-content">
+            <p>Determining what type of model will be used and how it will be trained. 
+              Decisions here include: choosing the model type, learning rule and loss function, regularizers, and the values of hyper-parameters determining normalization and training procedures. 
+              For example, choosing between linear, forest- based, or deep models; choosing the architecture of deep models; what constraints to add to the loss function, how to optimize that loss function (e.g. SGD or momentum), etc. 
+              Each decision here can lead to downstream bias such as choose a learning rule which is biased toward a certain subset of individuals in the data or over- or under-emphasizes outliers or minority populations.</p>
+        </div>
+      </div>
+        <div class="tabs">
+          <ul>
+            <!-- <li><a href="#casestudy">Case Study</a></li> -->
+            <li><a href="#problemidentification">Problem Identification</a></li>
+            <li><a href="#measurement">Measurement</a></li>
+            <li><a href="#mitigation">Mitigation</a></li>
+          </ul>
+          <div class="tab-content" id="problemidentification">
+            <table id="sub-table1">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table1 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="measurement">
+            <table id="sub-table2">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table2 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="mitigation">
+            <table id="sub-table3">
+              <thead>
+                <tr>
+                  <th>Paper Title</th>
+                  <th>Authors</th>
+                  <th>Description</th>
+                  <th>Tags/Comments</th>
+                  <th>Conference Venue</th>
+                  <th>Year</th>
+                  <th>Paper link</th>
+                  <th>Additional resources</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows will be dynamically generated by JavaScript -->
+                {% for row in sub_table3 %}
+                <tr>
+                    {% for cell in row %}
+                        {% if cell == "Paper link" %}
+                            <td><a href="{{ row[cell] }}">Link</a></td>
+                        {% else %}
+                            <td>{{ row[cell] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-    <div class="tabs">
-      <ul>
-        <li><a href="#casestudy">Case Study</a></li>
-        <li><a href="#problemidentification">Problem Identification</a></li>
-        <li><a href="#measurement">Measurement</a></li>
-        <li><a href="#mitigation">Mitigation</a></li>
-      </ul>
-      <div class="tab-content" id="casestudy">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="problemidentification">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Differential Privacy Has Disparate Impact on Model Accuracy</td>
-                <td>Eugene Bagdasaryan, Omid Poursaeed, Vitaly Shmatikov</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Problem Identification</td>
-                <td>NeurIPS</td>
-                <td>2019</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2019/hash/fc0de4e0396fff257ea362983c2dda5a-Abstract.html">Differential Privacy Has Disparate Impact on Model Accuracy</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Subgroup Generalization and Fairness of Graph Neural Networks</td>
-                <td>Jiaqi Ma, Junwei Deng, Qiaozhu Mei</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Problem Identification</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/08425b881bcde94a383cd258cea331be-Abstract.html">Subgroup Generalization and Fairness of Graph Neural Networks</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Measuring Fairness of Rankings under Noisy Sensitive Information</td>
-                <td>Azin Ghazimatin, Matthaus Kleindessner, Chris Russell, Ziawasch Abedjan, Jacek Golebiowski</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Problem Identification</td>
-                <td>FAccT</td>
-                <td>2022</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3534641">Measuring Fairness of Rankings under Noisy Sensitive Information</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Too Relaxed to Be Fair</td>
-                <td>Michael Lohaus, Michael Perrot, Ulrike Von Luxburg</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Problem Identification</td>
-                <td>ICML</td>
-                <td>2020</td>
-                <td><a href="https://proceedings.mlr.press/v119/lohaus20a.html">Too Relaxed to Be Fair</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Characterizing Fairness Over the Set of Good Models Under Selective Labels</td>
-                <td>Amanda Coston, Ashesh Rambachan, Alexandra Chouldechova</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Problem Identification</td>
-                <td>ICML</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.mlr.press/v139/coston21a.html">Characterizing Fairness Over the Set of Good Models Under Selective Labels</a></td>
-                <td>None</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="measurement">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Certifying Robustness to Programmable Data Bias in Decision Trees</td>
-                <td>Anna Meyer, Aws Albarghouthi, Loris D'Antoni</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/dcf531edc9b229acfe0f4b87e1e278dd-Abstract.html">Certifying Robustness to Programmable Data Bias in Decision Trees</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Fairness Under Unawareness: Assessing Disparity When Protected Class Is Unobserved</td>
-                <td>Jiahao Chen, Nathan Kallus, Xiaojie Mao, Geoffry Svacha, Madeleine Udell</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2019</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3287560.3287594">Fairness Under Unawareness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>POTs: protective optimization technologies</td>
-                <td>Bogdan Kulynych, Rebekah Overdorf, Carmela Troncoso, Seda Gürses</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2020</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3351095.3372853">POTs: protective optimization technologies</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Evaluating Fairness of Machine Learning Models Under Uncertain and Incomplete Information</td>
-                <td>Pranjal Awasthi, Alex Beutel, Matthäus Kleindessner, Jamie Morgenstern, Xuezhi Wang</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445884">Evaluating Fairness of Machine Learning Models Under Uncertain and Incomplete Information</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Fairness Through Robustness: Investigating Robustness Disparity in Deep Learning</td>
-                <td>Vedant Nanda, Samuel Dooley, Sahil Singla, Soheil Feizi, John P. Dickerson</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445910">Fairness Through Robustness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>A Statistical Test for Probabilistic Fairness</td>
-                <td>Bahar Taskesen, Jose Blanchet, Daniel Kuhn, Viet Anh Nguyen</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445927">A Statistical Test for Probabilistic Fairness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>An Outcome Test of Discrimination for Ranked Lists</td>
-                <td>Jonathan Roth, Guillaume Saint-Jacques, YinYin Yu</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>FAccT</td>
-                <td>2022</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533102">An Outcome Test of Discrimination for Ranked Lists</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Directional Bias Amplification</td>
-                <td>Angelina Wang, Olga Russakovsky</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>ICML</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.mlr.press/v139/wang21t.html">Directional Bias Amplification</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Active fairness auditing</td>
-                <td>Tom Yan, Chicheng Zhang</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Measurement</td>
-                <td>ICML</td>
-                <td>2022</td>
-                <td><a href="https://proceedings.mlr.press/v162/yan22c.html">Active fairness auditing</a></td>
-                <td>None</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tab-content" id="mitigation">
-        <table>
-          <thead>
-            <tr>
-              <th>Paper Title</th>
-              <th>Authors</th>
-              <th>Description</th>
-              <th>Tags/Comments</th>
-              <th>Conference Venue</th>
-              <th>Year</th>
-              <th>Paper link</th>
-              <th>Additional resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Unlocking Fairness: a Trade-off Revisited</td>
-                <td>Michael Wick, Swetasudha Panda, Jean-Baptiste Tristan</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2019</td>
-                <td><a href="https://proceedings.neurips.cc/paper/2019/hash/373e4c5d8edfa8b74fd4b6791d0cf6dc-Abstract.html">Unlocking Fairness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Refining Language Models with Compositional Explanations</td>
-                <td>Huihan Yao, Ying Chen, Qinyuan Ye, Xisen Jin, Xiang Ren</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/4b26dc4663ccf960c8538d595d0a1d3a-Abstract.html">Refining Language Models with Compositional Explanations</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Noise-tolerant fair classification</td>
-                <td>Alex Lamy, Ziyuan Zhong, Aditya K. Menon, Nakul Verma</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2019</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2019/hash/8d5e957f297893487bd98fa830fa6413-Abstract.html">Noise-tolerant fair classification</a></td>
-                <td>None</td>
-              </tr>
-
-              <tr>
-                <td>Learning Certified Individually Fair Representations</td>
-                <td>Anian Ruoss, Mislav Balunovic, Marc Fischer, Martin Vechev</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2020</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2020/hash/55d491cf951b1b920900684d71419282-Abstract.html">Learning Certified Individually Fair Representations</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Fair Sequential Selection Using Supervised Learning Models</td>
-                <td>Mohammad Mahdi Khalili, Xueru Zhang, Mahed Abroshan</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>NeurIPS</td>
-                <td>2021</td>
-                <td><a href="https://proceedings.neurips.cc//paper/2021/hash/ed277964a8959e72a0d987e598dfbe72-Abstract.html">Fair Sequential Selection Using Supervised Learning Models</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>On Dyadic Fairness: Exploring and Mitigating Bias in Graph Connections</td>
-                <td>Peizhao Li, Yifei Wang, Han Zhao, Pengyu Hong, Hongfu Liu</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>ICLR</td>
-                <td>2021</td>
-                <td><a href="https://openreview.net/forum?id=xgGS6PmzNq6">On Dyadic Fairness</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Fair Normalizing Flows</td>
-                <td>Mislav Balunovic, Anian Ruoss, Martin Vechev</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>ICLR</td>
-                <td>2022</td>
-                <td><a href="https://openreview.net/forum?id=BrFIKuxrZE">Fair Normalizing Flows</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Decoupled Classifiers for Group Fair and Efficient Machine Learning</td>
-                <td>Cynthia Dwork, Nicole Immorlica, Adam Tauman Kalai, Max Leiserson</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>FAccT</td>
-                <td>2018</td>
-                <td><a href="https://proceedings.mlr.press/v81/dwork18a.html">Decoupled Classifiers for Group Fair and Efficient Machine Learning</a></td>
-                <td>None</td>
-              </tr>
-
-              <tr>
-                <td>Recommendation Independence</td>
-                <td>Toshihiro Kamishima, Shotaro Akaho, Hideki Asoh, Jun Sakuma</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>FAccT</td>
-                <td>2018</td>
-                <td><a href="https://proceedings.mlr.press/v81/kamishima18a.html">Recommendation Independence</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Balanced Neighborhoods for Multi sided Fairness in Recommendation</td>
-                <td>Robin Burke, Nasim Sonboli, Aldo Ordonez-Gauger</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>FAccT</td>
-                <td>2018</td>
-                <td><a href="https://proceedings.mlr.press/v81/burke18a.html">Balanced Neighborhoods for Multi sided Fairness in Recommendation</a></td>
-                <td>None</td>
-              </tr>
-
-              <tr>
-                <td>Mitigating Bias in Set Selection with Noisy Protected Attributes</td>
-                <td>Anay Mehrotra, L. Elisa Celis</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>FAccT</td>
-                <td>2021</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3442188.3445887">Mitigating Bias in Set Selection with Noisy Protected Attributes</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Achieving Fairness via Post-Processing in Web-Scale Recommender Systems</td>
-                <td>Preetam Nandy, Cyrus DiCiccio, Divya Venugopalan, Heloise Logan, Kinjal Basu, Noureddine El Karoui</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>FAccT</td>
-                <td>2022</td>
-                <td><a href="https://dl.acm.org/doi/10.1145/3531146.3533136">Achieving Fairness via Post-Processing in Web-Scale Recommender Systems</a></td>
-                <td>None</td>
-              </tr>
-
-              <tr>
-                <td>Learning Optimal Fair Policies</td>
-                <td>Razieh Nabi, Daniel Malinsky, Ilya Shpitser</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>ICML</td>
-                <td>2019</td>
-                <td><a href="https://proceedings.mlr.press/v97/nabi19a.html">Learning Optimal Fair Policies</a></td>
-                <td>None</td>
-              </tr>
-              <tr>
-                <td>Contrastive Mixture of Posteriors for Counterfactual Inference, Data Integration and Fairness</td>
-                <td>Adam Foster, Arpi Vezer, Craig A. Glastonbury, Paidi Creed, Samer Abujadeh, Aaron Sim</td>
-                <td>N/A</td>
-                <td>Statistical Modeling, General, Mitigation</td>
-                <td>ICML</td>
-                <td>2022</td>
-                <td><a href="https://proceedings.mlr.press/v162/foster22a.html">Contrastive Mixture of Posteriors</a></td>
-                <td>None</td>
-              </tr>
-            
-          </tbody>
-        </table>
-    </div>
-  </div>
-    
-    <!-- JavaScript for the tabs -->
     <script>
-      const tabLinks = document.querySelectorAll('.tabs li a');
-      const tabContents = document.querySelectorAll('.tab-content');
+        
+        const tabLinks = document.querySelectorAll('.tabs li a');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-      tabLinks.forEach((link) => {
+        tabLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
+            e.preventDefault();
 
-          const targetId = e.target.getAttribute('href').substr(1);
+            const targetId = e.target.getAttribute('href').substr(1);
+            console.log(targetId)
 
-          tabLinks.forEach((link) => {
+            tabLinks.forEach((link) => {
             link.parentNode.classList.remove('active');
-          });
+            });
 
-          tabContents.forEach((content) => {
+            tabContents.forEach((content) => {
             content.classList.remove('active');
-          });
+            });
 
-          e.target.parentNode.classList.add('active');
-          document.getElementById(targetId).classList.add('active');
+            e.target.parentNode.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
         });
-      });
+        });
+        
+        
+        //   Retrieve the sub-table data from Flask and render the table
+        var subTableData1 = JSON.parse('{{ sub_table1 | tojson }}');
+        var subTable1 = document.getElementById('sub-table1');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData1.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable1.appendChild(row);
+        });
+
+        console.log(subTableData1)
+
+
+        var subTableData2 = JSON.parse('{{ sub_table2 | tojson }}');
+        var subTable2 = document.getElementById('sub-table2');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData2.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            
+            row.appendChild(cell);
+        });
+        
+        subTable2.appendChild(row);
+        });
+
+
+        var subTableData3 = JSON.parse('{{ sub_table3 | tojson }}');
+        var subTable3 = document.getElementById('sub-table3');
+        
+        // Iterate over the sub-table data and create table rows
+        subTableData3.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        
+        // Iterate over the row data and create table cells
+        Object.values(rowData).forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.textContent = cellData;
+            row.appendChild(cell);
+        });
+
+
+        
+        subTable3.appendChild(row);
+        });
+
+
+        
     </script>
   </body>
 </html>
