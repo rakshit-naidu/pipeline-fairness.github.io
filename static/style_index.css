@@ -270,7 +270,7 @@ body {
     left: 0;
     width: 80%;
     height: 80%;
-    background: #000;
+    background: #fff;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     transition: 0.5s;
   }
