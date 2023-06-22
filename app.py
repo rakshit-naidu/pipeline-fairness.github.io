@@ -1,11 +1,11 @@
 from flask import Flask, g, render_template, request, session, redirect, url_for, session, jsonify
 import sqlite3
 import csv, pandas as pd
+import os
 # from excelsheetpapers_to_htmltable import process_query
 
 
 app = Flask(__name__)
-app.secret_key = 'secret'
 
 # Global variable initialization
 # @app.before_request
@@ -17,7 +17,6 @@ def home():
     return render_template('index_b4_login.html')
 
 @app.route('/home/<username>')
-# def profile(user_id, mode')
 def index_after_login(username):
     # username = request.args.get('username')
     # mode = request.args.get('mode')
@@ -406,4 +405,4 @@ def deploymentnintegration_general():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
