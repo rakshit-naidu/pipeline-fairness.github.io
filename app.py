@@ -192,23 +192,23 @@ def process_query(query):
     sub_table3 = filtered_table3.to_dict(orient='records')
 
 
-    d = {"Paper Title": "N/A",
-        "Authors": "N/A",
-        "Description": "N/A",
-        "Tags/Comments": "N/A",
-        "Conference Venue": "N/A",
-        "Year": "N/A",
-        "Paper link": "N/A",
-        "Additional resources": "N/A"}
+    # d = {"Paper Title": "N/A",
+    #     "Authors": "N/A",
+    #     "Description": "N/A",
+    #     "Tags/Comments": "N/A",
+    #     "Conference Venue": "N/A",
+    #     "Year": "N/A",
+    #     "Paper link": "N/A",
+    #     "Additional resources": "N/A"}
     
-    if len(sub_table1)==0:
-        sub_table1.append(d) 
+    # if len(sub_table1)==0:
+    #     sub_table1.append(d) 
     
-    elif len(sub_table2)==0:
-        sub_table2.append(d) 
+    # elif len(sub_table2)==0:
+    #     sub_table2.append(d) 
         
-    elif len(sub_table3)==0:
-        sub_table3.append(d) 
+    # elif len(sub_table3)==0:
+    #     sub_table3.append(d) 
 
     return sub_table1, sub_table2, sub_table3
 
@@ -346,7 +346,6 @@ def statisticalmodeling_hyperparameters():
 def statisticalmodeling_regularizers():
     query = "Statistical Modeling-Regularizers"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    print(sub_table2)
     return render_template('statisticalmodeling/regularizers.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
@@ -369,7 +368,6 @@ def testingnvalidation_traintestsplit():
 def testingnvalidation_evaluationmetrics():
     query = "Testing and Validation-Evaluation Metrics"
     sub_table1, sub_table2, sub_table3 = process_query(query)
-    print(sub_table2)
     return render_template('testingnvalidation/evaluationmetrics.html', sub_table1=sub_table1, sub_table2=sub_table2, sub_table3=sub_table3)
 
 
