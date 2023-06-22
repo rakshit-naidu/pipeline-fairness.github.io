@@ -130,15 +130,15 @@ body {
 
   img{
       transition: transform .2s;
-      width:50px;
-      height:50px;
+      width:25px;
+      height: auto;
       margin:0 auto;
       background-color: rgb(173, 173, 237);
       border-radius: 10px;
       border: 1px solid black;
   }
   img:hover{
-      transform:scale(2.5);
+      transform:scale(1.2);
   }
 
   .row {
@@ -268,21 +268,36 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     background: #000;
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     transition: 0.5s;
   }
 
-  .container-body .septagon .shape img {
+  /* .container-body .septagon .shape img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+  } */
+
+  .container-body .septagon .shape img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
   }
+
   .container-body .septagon .shape .content{
     position: absolute;
     top: 0;
@@ -292,7 +307,7 @@ body {
     /* display: flex; */
     justify-content: center;
     align-items: center;
-    padding: 70px;
+    padding: 25px;
     text-align: center;
     background: linear-gradient(45deg,#03f47b,rgba(3,169,244,0.5));
     color: #fff;
