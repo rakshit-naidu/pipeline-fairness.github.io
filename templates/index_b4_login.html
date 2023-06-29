@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <title style="text-align:center">Pipeline Fairness</title>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../static/style_index.css">
@@ -27,7 +27,8 @@
                     <a href="#">Deployment & Integration</a>
                 </div>
             </div>  -->
-
+            
+            <a href="faqs.html">FAQs</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <form class="navbar">
@@ -53,15 +54,118 @@
     </nav>
     <div class="container-title">
         <h1 style="text-align:center">Pipeline-Aware Fairness Wiki</h1>
-        <p style="text-align:center" class="heading-desc">
+        <p style="text-align:left" class="heading-desc">
             Welcome to the Pipeline-Aware Fairness Wiki, a categorization of the recent algorithmic fairness and related literature (ICML, ICLR, FAccT, AIES, EAAMO, CHI, and CSCW for 2018-2022) through a <em>pipeline-aware lens</em>. 
             <br><br>
-            Hover over each area of the machine learning pipeline below to see sub-steps in each area, and click to see algorithmic harm case studies, measurement, and mitigation techniques corresponding to that part of the pipeline. <br>For more detail, see questions below the figure for FAQs. 
+            Hover over each area of the machine learning pipeline below to see sub-steps in each area, and click to see algorithmic harm case studies, measurement, and mitigation techniques corresponding to that part of the pipeline. 
+            <br>For more detail, see questions in the FAQs. 
             <br><br>
-            Create an account to request additions, or become a moderator to make edits to the page yourself!</p></h3>
+            Create an account to request additions, or become a moderator to make edits to the page yourself!
+            <br><br>
+            If you have additional stages of the pipeline you'd like us to add or any other overall changes, let us know <a href="https://forms.gle/bvLfpEESXQaxBef76">here</a>!
+        </p>
+
+    </div>
+    <div class="container-body">
+        <div class="card">
+            <img src="/static/viability_assessments.png" alt="viability_assessments" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Viability Assessments</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('viabilityassessments_cost') }}" class="links">Cost/Benefit</a></li>
+                <li><a href="{{ url_for('viabilityassessments_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+            
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/problem_formulation.png"" alt="problem_formulation" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Problem Formulation</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('problemformulation_predictiontarget') }}" class="links">Prediction Target</a></li>
+                <li><a href="{{ url_for('problemformulation_predictiveattributes') }}" class="links">Predictive Attributes</a></li>
+                <li><a href="{{ url_for('problemformulation_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/data_collection.png"" alt="data_collection" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Data<br>Collection</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('datacollection_sampling') }}" class="links">Sampling</a></li>
+                <li><a href="{{ url_for('datacollection_annotation') }}" class="links">Annotation</a></li>
+                <li><a href="{{ url_for('datacollection_featuremeasurement') }}" class="links">Feature Measurement</a></li>
+                <li><a href="{{ url_for('datacollection_recordlinkage') }}" class="links">Record Linkage</a></li>
+                <li><a href="{{ url_for('datacollection_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/data_preprocessing.png"" alt="data_preprocessing" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Data Preprocessing</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('datapreprocessing_featurecreation') }}" class="links">Feature Creation</a></li>
+                <li><a href="{{ url_for('datapreprocessing_featureselection') }}" class="links">Feature Selection</a></li>
+                <li><a href="{{ url_for('datapreprocessing_omission') }}" class="links">Data Cleaning (Omission)</a></li>
+                <li><a href="{{ url_for('datapreprocessing_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/statistical_modeling.png"" alt="statistical_modeling" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Statistical Modeling</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('statisticalmodeling_hypothesisclass') }} " class="links">Hypothesis Class</a></li>
+                <li><a href="{{ url_for('statisticalmodeling_optfunc') }}" class="links">Optimization Function</a></li>
+                <li><a href="{{ url_for('statisticalmodeling_regularizers') }}" class="links">Regularizers</a></li>
+                <li><a href="{{ url_for('statisticalmodeling_hyperparameters') }}" class="links">Hyperparameters</a></li>
+                <li><a href="{{ url_for('statisticalmodeling_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/testing_validation.png"" alt="testing_validation" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Testing & Validation</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('testingnvalidation_traintestsplit') }}" class="links">Train-test Split</a></li>
+                <li><a href="{{ url_for('testingnvalidation_evaluationmetrics') }}" class="links">Evaluation Metrics</a></li>
+                <li><a href="{{ url_for('testingnvalidation_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+        <div class="card">
+            <img src="/static/deployment_integration.png"" alt="deployment_integration" style="width:100%">
+            <div class="container-card-body">
+            <h4 style="text-align:center"><b>Deployment & Integration</b></h4> 
+            <p class="heading-bullet-sub-stages">Steps include:</p>
+            <ul class="bullet-sub-stages">
+                <li><a href="{{ url_for('deploymentnintegration_humancomputerhandoff') }}" class="links">Human-Computer Hand-off</a></li>
+                <li><a href="{{ url_for('deploymentnintegration_maintenanceoversight') }}" class="links">Maintenance Oversight</a></li>
+                <li><a href="{{ url_for('deploymentnintegration_general') }}" class="links">General</a></li>
+            </ul>
+            </div>
+        </div>
+
     </div>
 
-    <div class="container-body">
+    <!-- <div class="container-body">
         <div class="septagon">
             <div class="shape">
                 <img src="/static/viability_assessments.png">
@@ -69,9 +173,10 @@
                     <div>
                         <h2>1. Viability Assessments</h2>
                     </div>
-                    <ul>
-                        <li><a href="{{ url_for('viabilityassessments_cost') }}">COST/BENEFIT</a></li>
-                        <li><a href="{{ url_for('viabilityassessments_general') }}">GENERAL</a></li>
+                    <p class="bullet-sub-stages">Steps include: </p>
+                    <ul class="bullet-sub-stages">
+                        <li><a href="{{ url_for('viabilityassessments_cost') }}"><p>Cost/Benefit</p></a></li>
+                        <li><a href="{{ url_for('viabilityassessments_general') }}" target="_blank"><p>General</p></a></li>
                     </ul>
                 </div>
             </div>
@@ -124,9 +229,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container-body">
         <div class="septagon">
             <div class="shape">
                 <img src="/static/statistical_modeling.png">
@@ -159,6 +261,7 @@
                 </div>
             </div>
         </div>
+        <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
         <div class="septagon">
             <div class="shape">
                 <img src="/static/deployment_integration.png">
@@ -174,22 +277,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <h1 class="faq-heading">FAQs</h1>
-    <section class="faq-container">
-        <div class="faq-one">
-            <!-- faq question -->
-            <h1 class="faq-page">What does this resource consist of?</h1>
-            <!-- faq answer -->
-            <div class="faq-body">
-                <p>We performed a thorough survey of the recent literature, which we classified depending upon which area of the pipeline they analyze. We gathered papers from NEURIPS, ICML, ICLR, FAccT, AIES, EAAMO, CHI, and CSCW for the past five years, i.e. 2018-2022, that contain any of the following terms in their title, abstract, or keywords: "fairness", "fair", "discrimination", "disparity", "equity". In addition, we performed a series of Google Scholar searches to ensure our survey did not miss high-impact work published in other venues: One search used the keywords listed above and included papers published in any venue in the past five years with over 50 citations, through the top 50 results returned by this Google Scholar search. Additional Google Scholar searches used keywords from each step in the pipeline individually, to attempt to find papers targeted at each stage: for example, "data collection" and "fairness" and "machine learning". This results in ~1000 papers overall which fit our search criteria.
-                    <br><br>
-                    We then manually inspect each paper to understand whether and how the reported research is an instance of a pipeline-aware approach to fairness. That is, does it identify, measure, or mitigate a concrete cause of unfairness due to choices made in a specific stage of the ML pipeline. If so, we categorize the paper along two axes: what part of the pipeline it corresponds to (problem formulation, data choice, feature engineering, statistical modeling, testing and validation, or organizational realities), and whether it identifies, measures, mitigates, or provides a case study of a pipeline-based fairness problem. By identifying a pipeline fairness problem, we refer to papers that point to a previously unobserved source of bias on the machine learning pipeline either through theory or through experimentation with training pipelines on common machine learning datasets; by measuring a pipeline fairness problem, we refer to papers that provide a generalized technique for how to identify or gauge the magnitude of a specific source of unfairness along the machine learning pipeline; by mitigating, we mean paper which develop a technique for addressing a source of bias along the AI pipeline when it arises; and by a case study we refer to an example of how a choice on the machine learning pipeline lead to unfairness in a specific application, often on an already deployed model. Of our approximately 1000 papers, ~300 satisfied our criteria of being ``pipeline-aware'' approaches to fairness.
-                    <br><br>
-                    We present our full categorization of all the papers that we found related to pipeline-aware fairness, broken down into what stage of the pipeline they were most related to, across the stages presented in this website.</p>
-            </div>
-        </div>
+    </div> -->
 
 
     <script>
@@ -214,6 +302,6 @@
         //         window.location.href = this.id + '.html';
         //     });
         // });
-</script>
+    </script>
 </body>
 </html>
