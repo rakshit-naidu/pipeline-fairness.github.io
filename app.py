@@ -2,15 +2,10 @@ from flask import Flask, g, render_template, request, session, redirect, url_for
 import sqlite3
 import csv, pandas as pd
 import os
-# from excelsheetpapers_to_htmltable import process_query
 
 
 app = Flask(__name__)
 
-# Global variable initialization
-# @app.before_request
-# def before_request():
-#     g.logged_in = False
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
