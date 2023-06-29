@@ -16,6 +16,10 @@ app = Flask(__name__)
 def home():
     return render_template('index_b4_login.html')
 
+@app.route('/faqs')
+def faqs():
+    return render_template('faqs.html')
+
 @app.route('/home/<username>')
 def index_after_login(username):
     # username = request.args.get('username')
