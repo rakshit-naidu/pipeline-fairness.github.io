@@ -453,7 +453,7 @@ body {
   }
 
   .links:visited {
-    color: blue;
+    color: black;
     text-decoration: underline;
     text-decoration-color: blue;
     
