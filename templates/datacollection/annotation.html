@@ -217,7 +217,7 @@
                 {% else %}
                 <td>{{ row[cell] }}</td>
                 {% endif %}
-                {% endfor %}
+                {% endfor%}
                 <td><button onclick="editRow(this)">Edit</button></td>
             </tr>
             {% endfor %}
@@ -271,12 +271,12 @@
         };
         actionCell.appendChild(saveButton);
 
-        const cancelButton = document.createElement('button');
-        cancelButton.textContent = 'Cancel';
-        cancelButton.onclick = function () {
-            cancelEditRow(this);
-        };
-        actionCell.appendChild(cancelButton);
+        // const cancelButton = document.createElement('button');
+        // cancelButton.textContent = 'Cancel';
+        // cancelButton.onclick = function () {
+        //     cancelEditRow(this);
+        // };
+        // actionCell.appendChild(cancelButton);
     }
 
     // Function to edit a row
@@ -284,59 +284,41 @@
         const row = button.parentNode.parentNode;
         const cells = row.cells;
         const cellCount = cells.length - 1; // Exclude action cell
-
+        console.log(cellCount)
         for (let i = 0; i < cellCount; i++) {
-            const cell = cells[i];
-            const value = cell.textContent.trim();
-
-            cell.innerHTML = '';
-            const input = document.createElement('input');
-            input.value = value;
-            cell.appendChild(input);
+          const cell = cells[i];
+          let value = cell.textContent.trim();
+          if (i == cells.length - 3) { 
+              const link = document.createElement('a');
+              link.href = value;
+              link.textContent = 'Link';
+              cell.innerHTML = '';
+              cell.appendChild(link);
+          } 
+          else {
+              cell.innerHTML = '';
+              const input = document.createElement('input');
+              input.value = value;
+              cell.appendChild(input);
+          }
         }
 
         const actionCell = cells[cellCount];
-        const saveButton = actionCell.firstChild;
-        saveButton.textContent = 'Update';
-        saveButton.onclick = function () {
-            updateRow(this);
-        };
+        const editButton = actionCell.firstChild;
+        editButton.style.display = 'none';
 
-        const cancelButton = actionCell.lastChild;
-        cancelButton.textContent = 'Delete';
-        cancelButton.onclick = function () {
-            deleteRow(this);
-        };
-    }
-
-    // Function to save the added row
-    function saveRow(button) {
-        const row = button.parentNode.parentNode;
-        const inputs = row.querySelectorAll('input');
-        const cellCount = inputs.length;
-
-        for (let i = 0; i < cellCount; i++) {
-            const input = inputs[i];
-            const value = input.value;
-            const cell = row.cells[i];
-
-            cell.innerHTML = value;
+        let deleteButton = actionCell.querySelector('button.delete');
+        if (!deleteButton) {
+            deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.className = 'delete';
+            deleteButton.onclick = function () {
+                deleteRow(this);
+            };
+            actionCell.appendChild(deleteButton);
         }
 
-        const actionCell = row.cells[cellCount];
-        const editButton = document.createElement('button');
-        editButton.textContent = 'Edit';
-        editButton.onclick = function () {
-            editRow(this);
-        };
-        actionCell.appendChild(editButton);
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function () {
-            deleteRow(this);
-        };
-        actionCell.appendChild(deleteButton);
+        deleteButton.style.display = 'inline-block';
     }
 
     // Function to update the edited row
@@ -352,19 +334,6 @@
 
             cell.innerHTML = value;
         }
-
-        const actionCell = row.cells[cellCount];
-        const editButton = actionCell.firstChild;
-        editButton.textContent = 'Edit';
-        editButton.onclick = function () {
-            editRow(this);
-        };
-
-        const deleteButton = actionCell.lastChild;
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function () {
-            deleteRow(this);
-        };
     }
 
     // Function to cancel editing and remove the added row
@@ -379,13 +348,14 @@
         row.remove();
     }
 
-    // Function to save the table data to a CSV file
+    
+    // Function to save the table data
     function saveTable(tableId) {
         const table = document.getElementById(tableId);
         const rows = table.rows;
         const rowCount = rows.length;
         const colCount = rows[0].cells.length;
-        const csvContent = [];
+        const tableData = [];
 
         // Get the header row
         const headerRow = [];
@@ -393,7 +363,7 @@
             const headerCell = rows[0].cells[i].textContent;
             headerRow.push(headerCell);
         }
-        csvContent.push(headerRow.join(','));
+        tableData.push(headerRow);
 
         // Get the data rows
         for (let i = 1; i < rowCount; i++) {
@@ -402,18 +372,49 @@
                 const dataCell = rows[i].cells[j].textContent;
                 dataRow.push(dataCell);
             }
-            csvContent.push(dataRow.join(','));
+            tableData.push(dataRow);
         }
 
-        // Create a Blob object with the CSV content
-        const csvData = csvContent.join('\n');
-        const blob = new Blob([csvData], { type: 'text/csv' });
+        // Perform your desired action with the table data
+        // For example, you can send the table data to the server for further processing
 
-        // Create a download link and trigger the download
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'table_data.csv';
-        link.click();
+        // Log the table data to the console for demonstration
+        console.log(tableData);
+
+        exitEditingMode(tableId);
+    }
+
+    // Function to exit the editing mode and remove input fields
+    function exitEditingMode(tableId) {
+        const table = document.getElementById(tableId);
+        const rows = table.rows;
+        const rowCount = rows.length;
+        const colCount = rows[0].cells.length;
+
+        // Iterate over the rows and remove input fields
+        for (let i = 1; i < rowCount; i++) {
+            const row = rows[i];
+            const cells = row.cells;
+
+            // Iterate over the cells and remove input fields
+            for (let j = 0; j < colCount; j++) {
+                const cell = cells[j];
+                const input = cell.querySelector('input');
+                if (input) {
+                    cell.textContent = input.value;
+                }
+            }
+
+            // Restore edit button and remove cancel button
+            const actionCell = row.cells[colCount];
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.onclick = function () {
+                editRow(this);
+            };
+            actionCell.innerHTML = '';
+            actionCell.appendChild(editButton);
+        }
     }
 
     // Retrieve the sub-table data from Flask and render the table
@@ -444,9 +445,7 @@
         subTable1.appendChild(row);
     });
 
-    console.log(subTableData1);
-
-    var subTableData2 = JSONparse('{{ sub_table2 | tojson }}');
+    var subTableData2 = JSON.parse('{{ sub_table2 | tojson }}');
     var subTable2 = document.getElementById('sub-table2');
 
     // Iterate over the sub-table data and create table rows
