@@ -11,7 +11,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Pipeline Fairness</a>
+                <a class="navbar-brand" href="https://pipelinefairness.miraheze.org/">Pipeline Fairness Wiki</a>
             </div>
             <!-- <div class="dropdown-nav">
                 <button class="dropbtn" onclick="myFunction()">Stages
@@ -36,8 +36,8 @@
                 
                 <!-- <h1 class="message">Welcome, {{ username }}!</h1> -->
                 <!-- <a href="{{ url_for('logout') }}" class="logout-button">Logout</a> -->
-                <a href="{{ url_for('register') }}" class="register-button">Register</a>
-                <a href="{{ url_for('login') }}" class="login-button">Login</a>
+                <!-- <a href="{{ url_for('register') }}" class="register-button">Register</a>
+                <a href="{{ url_for('login') }}" class="login-button">Login</a> -->
             </form> 
             <!-- role="search" action="{{ url_for('search') }}">
                 <div class="form-group">
@@ -73,8 +73,10 @@
             <h4 style="text-align:center"><b>Viability Assessments</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('viabilityassessments_cost') }}" class="links">Cost/Benefit</a></li>
-                <li><a href="{{ url_for('viabilityassessments_general') }}" class="links">General</a></li>
+                <!-- <li><a href="{{ url_for('viabilityassessments_cost') }}" class="links">Cost/Benefit</a></li>
+                <li><a href="{{ url_for('viabilityassessments_general') }}" class="links">General</a></li> -->
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Viability_Assessments-Cost/Benefit" class="links">Cost/Benefit</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Viability_Assessments-General" class="links">General</a></li>
             </ul>
             </div>
             
@@ -86,9 +88,9 @@
             <h4 style="text-align:center"><b>Problem Formulation</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('problemformulation_predictiontarget') }}" class="links">Prediction Target</a></li>
-                <li><a href="{{ url_for('problemformulation_predictiveattributes') }}" class="links">Predictive Attributes</a></li>
-                <li><a href="{{ url_for('problemformulation_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Problem_Formulation-Prediction_Target" class="links">Prediction Target</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Problem_Formulation-Predictive_Attributes" class="links">Predictive Attributes</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Problem_Formulation-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
@@ -99,11 +101,11 @@
             <h4 style="text-align:center"><b>Data<br>Collection</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('datacollection_sampling') }}" class="links">Sampling</a></li>
-                <li><a href="{{ url_for('datacollection_annotation') }}" class="links">Annotation</a></li>
-                <li><a href="{{ url_for('datacollection_featuremeasurement') }}" class="links">Feature Measurement</a></li>
-                <li><a href="{{ url_for('datacollection_recordlinkage') }}" class="links">Record Linkage</a></li>
-                <li><a href="{{ url_for('datacollection_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Collection-Sampling" class="links">Sampling</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Collection-Annotation" class="links">Annotation</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Collection-Feature_Measurement" class="links">Feature Measurement</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Collection-Record_Linkage" class="links">Record Linkage</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Collection-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
@@ -114,10 +116,10 @@
             <h4 style="text-align:center"><b>Data Preprocessing</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('datapreprocessing_featurecreation') }}" class="links">Feature Creation</a></li>
-                <li><a href="{{ url_for('datapreprocessing_featureselection') }}" class="links">Feature Selection</a></li>
-                <li><a href="{{ url_for('datapreprocessing_omission') }}" class="links">Data Cleaning (Omission)</a></li>
-                <li><a href="{{ url_for('datapreprocessing_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Preprocessing-Feature_Creation" class="links">Feature Creation</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Preprocessing-Feature_Selection" class="links">Feature Selection</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Preprocessing-Data_Cleaning_(Omission)" class="links">Data Cleaning (Omission)</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Data_Preprocessing-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
@@ -128,11 +130,11 @@
             <h4 style="text-align:center"><b>Statistical Modeling</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('statisticalmodeling_hypothesisclass') }} " class="links">Hypothesis Class</a></li>
-                <li><a href="{{ url_for('statisticalmodeling_optfunc') }}" class="links">Optimization Function</a></li>
-                <li><a href="{{ url_for('statisticalmodeling_regularizers') }}" class="links">Regularizers</a></li>
-                <li><a href="{{ url_for('statisticalmodeling_hyperparameters') }}" class="links">Hyperparameters</a></li>
-                <li><a href="{{ url_for('statisticalmodeling_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Statistical_Modeling-Hypothesis_Class" class="links">Hypothesis Class</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Statistical_Modeling-Optimization_Function" class="links">Optimization Function</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Statistical_Modeling-Regularizers" class="links">Regularizers</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Statistical_Modeling-Hyperparameters" class="links">Hyperparameters</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Statistical_Modeling-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
@@ -143,9 +145,9 @@
             <h4 style="text-align:center"><b>Testing & Validation</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('testingnvalidation_traintestsplit') }}" class="links">Train-test Split</a></li>
-                <li><a href="{{ url_for('testingnvalidation_evaluationmetrics') }}" class="links">Evaluation Metrics</a></li>
-                <li><a href="{{ url_for('testingnvalidation_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Testing_and_Validation-Train-Test_Split" class="links">Train-test Split</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Testing_and_Validation-Evaluation_Metrics" class="links">Evaluation Metrics</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Testing_and_Validation-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
@@ -156,9 +158,9 @@
             <h4 style="text-align:center"><b>Deployment & Integration</b></h4> 
             <p class="heading-bullet-sub-stages">Steps include:</p>
             <ul class="bullet-sub-stages">
-                <li><a href="{{ url_for('deploymentnintegration_humancomputerhandoff') }}" class="links">Human-Computer Hand-off</a></li>
-                <li><a href="{{ url_for('deploymentnintegration_maintenanceoversight') }}" class="links">Maintenance Oversight</a></li>
-                <li><a href="{{ url_for('deploymentnintegration_general') }}" class="links">General</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Deployment_and_Integration-Human/Computer_Handoff" class="links">Human-Computer Hand-off</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Deployment_and_Integration-Maintenance_Oversight" class="links">Maintenance Oversight</a></li>
+                <li><a href="https://pipelinefairness.miraheze.org/wiki/Deployment_and_Integration-General" class="links">General</a></li>
             </ul>
             </div>
         </div>
