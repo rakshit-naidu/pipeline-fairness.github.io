@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title style="text-align:center">About Us</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../static/style_index.css">
+    </head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://pipelinefairness.miraheze.org/">Pipeline Fairness Wiki</a>
+            </div>
+            <!-- <div class="dropdown-nav">
+                <button class="dropbtn" onclick="myFunction()">Stages
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Viability Assessments</a>
+                    <a href="#">Problem Formulation</a>
+                    <a href="#">Data Collection</a>
+                    <a href="#">Data Preprocessing</a>
+                    <a href="#">Statistical Modeling</a>
+                    <a href="#">Testing & Validation</a>
+                    <a href="#">Deployment & Integration</a>
+                </div>
+            </div>  -->
+            
+            <a href="{{ url_for('faqs') }}">FAQs</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <form class="navbar">
+                
+                <a href="https://pipelinefairness.miraheze.org/w/index.php?title=Special:CreateAccount">Create Account</a>
+                <!-- <h1 class="message">Welcome, {{ username }}!</h1> -->
+                <!-- <a href="{{ url_for('logout') }}" class="logout-button">Logout</a> -->
+                <!-- <a href="{{ url_for('register') }}" class="register-button">Register</a>
+                <a href="{{ url_for('login') }}" class="login-button">Login</a> -->
+            </form> 
+            <!-- role="search" action="{{ url_for('search') }}">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="query">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+                
+            </form> -->
+            <!-- <a href="{{ url_for('register') }}">Register</a>
+
+            <a href="{{ url_for('login') }}">Login</a> -->
+            <!-- <a href="{{ url_for('logout') }}" class="logout-button">Logout</a> -->
+        </div>
+    </nav>
+    <div class="container-title">
+        <h1 style="text-align:center">Contact info:</h1>
+        <p style="text-align:left" class="heading-desc">
+            <ul>
+                <li>
+                    Emily Black : e{lastname}@barnard.edu
+                </li>
+                <li>
+                    Rakshit Naidu at : {firstname}{lastname}@gatech.edu
+                </li>
+            </ul>
+        </p>
+        
+        
+    </div>
+</body>
+</html>

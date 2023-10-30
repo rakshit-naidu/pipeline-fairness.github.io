@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title style="text-align:center">About Us</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../static/style_index.css">
+    </head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://pipelinefairness.miraheze.org/">Pipeline Fairness Wiki</a>
+            </div>
+            <!-- <div class="dropdown-nav">
+                <button class="dropbtn" onclick="myFunction()">Stages
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Viability Assessments</a>
+                    <a href="#">Problem Formulation</a>
+                    <a href="#">Data Collection</a>
+                    <a href="#">Data Preprocessing</a>
+                    <a href="#">Statistical Modeling</a>
+                    <a href="#">Testing & Validation</a>
+                    <a href="#">Deployment & Integration</a>
+                </div>
+            </div>  -->
+            
+            <a href="{{ url_for('faqs') }}">FAQs</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <form class="navbar">
+                
+                <a href="https://pipelinefairness.miraheze.org/w/index.php?title=Special:CreateAccount">Create Account</a>
+                <!-- <h1 class="message">Welcome, {{ username }}!</h1> -->
+                <!-- <a href="{{ url_for('logout') }}" class="logout-button">Logout</a> -->
+                <!-- <a href="{{ url_for('register') }}" class="register-button">Register</a>
+                <a href="{{ url_for('login') }}" class="login-button">Login</a> -->
+            </form> 
+            <!-- role="search" action="{{ url_for('search') }}">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="query">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+                
+            </form> -->
+            <!-- <a href="{{ url_for('register') }}">Register</a>
+
+            <a href="{{ url_for('login') }}">Login</a> -->
+            <!-- <a href="{{ url_for('logout') }}" class="logout-button">Logout</a> -->
+        </div>
+    </nav>
+    <div class="container-title">
+        <h1 style="text-align:center">Contact info:</h1>
+        <p style="text-align:left" class="heading-desc">
+            Our team is an interdisciplinary group of researchers spanning ML, public policy, and legal expertise.
+        <ol>
+            <li>
+                <b>Emily Black</b> is a postdoctoral scholar at Stanford University’s RegLab. Her graduate thesis focused on pipeline-aware fairness techniques, from identifying learning rule instability as a source of unfairness and finding mitigation strategies, to interrogating the pipeline to find bias in real-world systems. For the past two years, she has been working with the IRS to identify and mitigate bias on the basis of income in tax audits.
+                She recently graduated with her PhD from CMU, where she was advised by Professor Matt Fredrikson. Emily’s recent work has focused on connecting problems of instability and fairness in deep learning algorithms, developing explanation techniques for ML models, and investigating fairness effects of various government uses of AI systems. In particular, at RegLab, her works focuses on the fairness impacts of AI systems in tax audit selection.
+            </li>
+            <br>
+            <li>
+                <b>Rayid Ghani</b> is a Distinguished Career Professor in the ML Department and the Heinz College of Information Systems and Public Policy at CMU. Rayid works on the use of large-scale AI/ML/Data Science in solving public policy and social challenges in a fair and equitable manner in close collaboration with governments and non-profits and has presented and organized several workshops and tutorials on AI, social impact, public policy, and issues around fairness and explainability. %across health, criminal justice, education, public safety, economic development, and urban infrastructure. 
+            </li>
+            <br>
+            <li>
+                <b>Hoda Heidari</b> is an Assistant Professor in ML,  Societal Computing, and Human-Computer Interaction at CMU. Her research addresses issues of unfairness and accountability through ML systems. She has organized several scholarly events on related topics, including a tutorial on `` Economic Theories of Distributive Justice for Fair ML'' at the Web Conference (WWW) and several workshops on Responsible and Human-Centric ML at NeurIPS and ICLR. 
+            </li>
+            <br>
+            <li>
+                <b>Daniel E. Ho</b> is the William Benjamin Scott and Luna M. Scott Professor of Law at Stanford Law School, Associate Director of the Stanford Institute for Human-Centered AI, and Director of the Regulation, Evaluation, and Governance Lab (RegLab). 
+                Ho also serves as an appointed member to the National AI Advisory Commission (NAIAC), advising the White House National AI Initiative Office. %His scholarship focuses on administrative law, regulatory policy, and antidiscrimination law. 
+            </li>
+            <br>
+            <li>
+                <b>Rakshit Naidu</b> is a PhD student at Georgia Institute of Technology. He was a research assistant to Professor Hoda Heidari at CMU. He also holds a masters in Information Technology from CMU. 
+            </li>
+            <br>
+            <li>
+                <b>Kit Rodolfa</b> is the Research Director at the Regulation, Evaluation, and Governance Lab (RegLab) at Stanford University working at the intersection of ML and public policy. He has taught several tutorials, graduate-level courses, and invited lectures on ML bias and fairness.
+                His research interests include the bias, fairness, and interpretability of ML methods. Previous, Kit was a Senior Research Scientist in Rayid Ghani's group at CMU, led the initial data science efforts at Devoted Health, and has served as Chief Data Scientist at Hillary for America, as the Director of Digital Analytics for the White House Office of Digital Strategy during the Obama administration, and on the analytics team during President Obama's 2012 re-election campaign.
+            </li>
+        </ol> 
+        </p>
+
+    
+    </div>
+</body>
+</html>
