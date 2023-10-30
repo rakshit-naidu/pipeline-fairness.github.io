@@ -11,11 +11,11 @@ app = Flask(__name__)
 def home():
     return render_template('index_b4_login.html')
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def aboutpage():
     return render_template('about.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contactpage():
     return render_template('contact.html')
 
